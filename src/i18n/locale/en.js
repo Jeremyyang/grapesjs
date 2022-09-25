@@ -65,7 +65,7 @@ export default {
     emptyState: '- State -',
     states: {
       hover: 'Hover',
-      active: 'Click',
+      active: 'Active',
       'nth-of-type(2n)': 'Even/Odd',
     },
   },

@@ -4,6 +4,7 @@ const getOptions = items => items.map(item => ({ id: item }));
 
 export default class PropertyFactory {
   constructor() {
+    // 表示交互控件UI显示类型，后续可扩展
     this.typeNumber = 'number';
     this.typeColor = 'color';
     this.typeRadio = 'radio';
@@ -12,6 +13,7 @@ export default class PropertyFactory {
     this.typeSlider = 'slider';
     this.typeComposite = 'composite';
     this.typeStack = 'stack';
+    // 单位
     this.unitsSize = ['px', '%', 'em', 'rem', 'vh', 'vw'];
     this.unitsSizeNoPerc = ['px', 'em', 'rem', 'vh', 'vw'];
     this.unitsTime = ['s', 'ms'];
@@ -30,8 +32,8 @@ export default class PropertyFactory {
     this.opstDisplay = getOptions(['block', 'inline', 'inline-block', 'flex', 'none']);
     this.optsTransitFn = getOptions(['linear', 'ease', 'ease-in', 'ease-out', 'ease-in-out']);
     this.optsCursor = getOptions(['auto', 'pointer', 'copy', 'crosshair', 'grab', 'grabbing', 'help', 'move', 'text']);
-    this.optsFloat = getOptions(['none', 'left', 'right']);
-    this.optsPos = getOptions(['static', 'relative', 'absolute', 'fixed']);
+    // this.optsFloat = getOptions(['none', 'left', 'right']); // deprecated
+    this.optsPos = getOptions(['static', 'relative', 'absolute', 'fixed', 'sticky']);
     this.optsTextAlign = getOptions(['left', 'center', 'right', 'justify']);
     this.optsFlexAlign = getOptions(optsFlexAlign);
     this.optsJustCont = getOptions([...optsFlex, 'space-between', 'space-around', 'space-evenly']);
@@ -84,6 +86,7 @@ export default class PropertyFactory {
       { id: 'inset', label: 'Inside' },
     ];
     this.optsFonts = [
+      'inherit',
       'Arial, Helvetica' + ss,
       'Arial Black, Gadget' + ss,
       'Brush Script MT' + ss,
@@ -147,6 +150,7 @@ export default class PropertyFactory {
       ['right', {}, 'top'],
       ['bottom', {}, 'top'],
       ['left', {}, 'top'],
+      ['z-index', { type: typeNumber, default: 'auto', fixedValues }],
       ['margin-top', { default: '0' }, 'top'],
       ['margin-right', {}, 'margin-top'],
       ['margin-bottom', {}, 'margin-top'],
@@ -184,8 +188,8 @@ export default class PropertyFactory {
       ['flex-shrink', { default: '1' }, 'order'],
 
       // Radio types
-      ['float', { type: this.typeRadio, default: 'none', options: this.optsFloat }],
-      ['position', { default: 'static', options: this.optsPos }, 'float'],
+      ['float', { type: this.typeRadio, default: 'none', options: this.optsFloat }], // 配置被下面继承了
+      ['position', { type: this.typeSelect, default: 'static', options: this.optsPos }],
       ['text-align', { default: 'left', options: this.optsTextAlign }, 'float'],
 
       // Color types
@@ -225,7 +229,7 @@ export default class PropertyFactory {
         },
         'display',
       ],
-      ['font-family', { default: 'Arial, Helvetica, sans-serif', options: this.optsFonts }, 'display'],
+      ['font-family', { default: 'inherit', options: this.optsFonts }, 'display'],
       ['font-weight', { default: '400', options: this.optsWeight }, 'display'],
       ['border-style', { default: 'solid', options: this.optsBorderStyle }, 'display'],
       ['box-shadow-type', { default: '', options: this.optsShadowType }, 'display'],

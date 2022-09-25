@@ -77,38 +77,51 @@
 
       </style>
     </div>
-
+    <script src="https://unpkg.com/grapesjs-plugin-export@1.0.11/dist/index.js"></script>
+    <script src="https://unpkg.com/grapesjs-tabs"></script>
+    <script src="https://unpkg.com/grapesjs-custom-code"></script>
+    <script src="https://unpkg.com/grapesjs-component-countdown"></script>
+    <!-- <script src="https://unpkg.com/grapesjs-lory-slider"></script> bug -->
+    <!-- <script src="https://unpkg.com/grapesjs-blocks-basic@1.0.1/dist/index.js"></script> -->
     <script type="text/javascript">
       var editor = grapesjs.init({
         showOffsets: 1,
         noticeOnUnload: 0,
         container: '#gjs',
+        plugins: [
+          'grapesjs-plugin-export',
+          'grapesjs-blocks-basic', // 只能用 es6方式调用
+          'grapesjs-tabs',
+          'grapesjs-custom-code', // 有 bug
+          'grapesjs-component-countdown',  // 有 bug 无法配置启动计时
+          'grapesjs-lory-slider',  // 有 bug 无法加载
+        ],
         height: '100%',
         fromElement: true,
         storageManager: { autoload: 0 },
         styleManager : {
           sectors: [{
-              name: 'General',
+              name: 'General Layout',
               open: false,
-              buildProps: ['float', 'display', 'position', 'top', 'right', 'left', 'bottom']
+              buildProps: ['display', 'position', 'top', 'right', 'left', 'bottom', 'z-index']
             },{
               name: 'Flex',
               open: false,
               buildProps: ['flex-direction', 'flex-wrap', 'justify-content', 'align-items', 'align-content', 'order', 'flex-basis', 'flex-grow', 'flex-shrink', 'align-self']
             },{
-              name: 'Dimension',
+              name: 'Box Size',
               open: false,
               buildProps: ['width', 'height', 'max-width', 'min-height', 'margin', 'padding'],
             },{
-              name: 'Typography',
+              name: 'Text Style',
               open: false,
               buildProps: ['font-family', 'font-size', 'font-weight', 'letter-spacing', 'color', 'line-height', 'text-shadow'],
             },{
-              name: 'Decorations',
+              name: 'Box Decorations',
               open: false,
-              buildProps: ['border-radius-c', 'background-color', 'border-radius', 'border', 'box-shadow', 'background'],
+              buildProps: ['border-radius-c', 'border-radius', 'border', 'box-shadow', 'background-color', 'background'],
             },{
-              name: 'Extra',
+              name: 'Animation',
               open: false,
               buildProps: ['transition', 'perspective', 'transform'],
             }
@@ -117,6 +130,7 @@
       });
 
       editor.BlockManager.add('testBlock', {
+        category: 'Basic',
         label: 'Block',
         attributes: { class:'gjs-fonts gjs-f-b1' },
         content: `<div style="padding-top:50px; padding-bottom:50px; text-align:center">Test block</div>`
