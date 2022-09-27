@@ -389,7 +389,6 @@ export default class ItemView extends View {
   }
 
   render() {
-    debugger;
     const { model, config, pfx, ppfx, opt, sorter } = this;
     this.__clearItems();
     const { opened, module, ItemView } = opt;

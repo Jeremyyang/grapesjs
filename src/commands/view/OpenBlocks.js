@@ -10,15 +10,16 @@ export default {
       return custom.open(bm.__customData());
     }
 
-    if (this.firstRender && !appendTo) {
-      const id = 'views-container';
+    if (this.firstRender) {
+      const id = 'blocks-viewer';
       const pn = editor.Panels;
-      const panels = pn.getPanel(id) || pn.addPanel({ id });
+      const panels = pn.getPanel(id) || pn.addPanel({ id, appendTo });
       panels.set('appendContent', container).trigger('change:appendContent');
       if (!custom) container.appendChild(bm.render());
     }
 
-    if (container) container.style.display = 'block';
+    // if (container) container.style.display = 'block';
+    if (container) container.parentElement.style.display = 'block';
   },
 
   close() {
@@ -29,7 +30,8 @@ export default {
       return custom.close(this.bm.__customData());
     }
 
-    if (container) container.style.display = 'none';
+    // if (container) container.style.display = 'none';
+    if (container) container.parentElement.style.display = 'none';
   },
 
   run(editor) {

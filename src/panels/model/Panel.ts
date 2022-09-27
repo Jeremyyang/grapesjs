@@ -10,6 +10,7 @@ export default class Panel extends Model<PanelManager> {
       visible: true,
       buttons: [],
       attributes: {},
+      appendTo: '',
     };
   }
 

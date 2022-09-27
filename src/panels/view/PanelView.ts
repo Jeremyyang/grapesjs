@@ -14,7 +14,7 @@ export default class PanelView extends View<Panel> {
   }
 
   /**
-   * Append content of the panel
+   * Append content of the panel to the panel self
    * */
   appendContent() {
     this.$el.append(this.model.get('appendContent'));
@@ -113,6 +113,7 @@ export default class PanelView extends View<Panel> {
     const ppfx = this.ppfx;
     const cls = `${this.className} ${this.id} ${ppfx}one-bg ${ppfx}two-color`;
     $el.addClass(cls);
+    console.log($el[0]);
 
     this.toggleVisible();
 
@@ -120,7 +121,6 @@ export default class PanelView extends View<Panel> {
       var buttonsView = new ButtonsView(buttons);
       $el.append(buttonsView.render().el);
     }
-
     $el.append(this.model.get('content'));
     return this;
   }

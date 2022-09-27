@@ -16,7 +16,7 @@ export default {
       // Device Manager
       const dvm = editor.DeviceManager;
       if (dvm && config.showDevices) {
-        const devicePanel = panels.addPanel({ id: 'devices-c' });
+        const devicePanel = panels.addPanel({ id: 'devices-c', appendTo: '.device-btns' });
         const dvEl = dvm.render();
         devicePanel.set('appendContent', dvEl).trigger(trgEvCnt);
       }

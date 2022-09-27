@@ -21,7 +21,7 @@ type btnT =
 
 export type panelConfigT = {
   stylePrefix: string;
-  defaults: { id: string; buttons: btnT[] }[];
+  defaults: { id: string; appendTo?: string; buttons: btnT[] }[];
   em: any;
   delayBtnsShow: number;
 };
@@ -31,12 +31,13 @@ const panelConfig: panelConfigT = {
   // icon from https://fontawesome.com/v4/icons/
   // Default panels fa-sliders for features
   defaults: [
-    {
-      id: 'commands',
-      buttons: [{}],
-    },
+    // {
+    //   id: 'commands',
+    //   buttons: [{}],
+    // },
     {
       id: 'options',
+      appendTo: '.view-btns',
       buttons: [
         {
           active: true,
@@ -70,6 +71,7 @@ const panelConfig: panelConfigT = {
     },
     {
       id: 'views',
+      appendTo: '.paint-btns',
       buttons: [
         {
           id: osm,

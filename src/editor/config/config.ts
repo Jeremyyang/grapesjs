@@ -1,5 +1,5 @@
 export default {
-  // Style prefix
+  // Style prefix, do not change it!
   stylePrefix: 'gjs-',
 
   /**

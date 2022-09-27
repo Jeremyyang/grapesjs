@@ -180,7 +180,6 @@ export default class ButtonView extends View<Button> {
     const { $el } = this;
     !model.get('el') && $el.empty();
     this.updateAttributes();
-    console.log('button view', $el, model);
     label && $el.append(label);
     this.checkActive();
     this.updateDisable();
