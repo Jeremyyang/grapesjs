@@ -55,7 +55,7 @@ const commandsDef = [
   ['paste', 'PasteComponent'],
   ['canvas-move', 'CanvasMove'],
   ['canvas-clear', 'CanvasClear'],
-  ['open-code', 'ExportTemplate', 'export-template'],
+  ['open-code', 'ExportCode', 'export-code'],
   ['open-layers', 'OpenLayers', 'open-layers'],
   ['open-styles', 'OpenStyleManager', 'open-sm'],
   ['open-traits', 'OpenTraitManager', 'open-tm'],
@@ -209,14 +209,15 @@ export default () => {
       defaultCommands['core:undo'] = e => e.UndoManager.undo();
       defaultCommands['core:redo'] = e => e.UndoManager.redo();
       commandsDef.forEach(item => {
-        const oldCmd = item[2];
-        const cmd = require(`./view/${item[1]}`).default;
-        const cmdName = `core:${item[0]}`;
-        defaultCommands[cmdName] = cmd;
+        const oldCmd = item[2]; // eg. export-code
+        const cmd = require(`./view/${item[1]}`).default; // eg. file: ExportCode
+        const cmdName = `core:${item[0]}`; // eg. open-code
+        defaultCommands[cmdName] = cmd; // eg. defaultCommands['core:open-code'] = file['ExportCode'] defaultObj
         if (oldCmd) {
-          defaultCommands[oldCmd] = cmd;
+          defaultCommands[oldCmd] = cmd; // eg. defaultCommands['export-code'] = file['ExportCode'] defaultObj
           // Propogate old commands (can be removed once we stop to call old commands)
           ['run', 'stop'].forEach(name => {
+            // em.on('run:export-code', (...args) => em.trigger('run:open-code', ...args));
             em.on(`${name}:${oldCmd}`, (...args) => em.trigger(`${name}:${cmdName}`, ...args));
           });
         }

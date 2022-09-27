@@ -27,14 +27,13 @@
  */
 import { Module } from '../abstract';
 import EditorModel from '../editor/model/Editor';
-import defaults from './config/config';
+import panelConfig, { panelConfigT } from './config/config';
 import Button from './model/Button';
 import Panel from './model/Panel';
 import Panels from './model/Panels';
 import PanelsView from './view/PanelsView';
 
-export default class PanelManager extends Module<typeof defaults> {
-  //config = {};
+export default class PanelManager extends Module<panelConfigT> {
   panels: Panels;
   PanelsViewObj?: PanelsView;
 
@@ -44,11 +43,12 @@ export default class PanelManager extends Module<typeof defaults> {
    * @private
    */
   constructor(em: EditorModel) {
-    super(em, 'Panels', defaults);
-    this.panels = new Panels(this, this.config.defaults);
-    for (var name in defaults) {
+    super(em, 'Panels', panelConfig);
+    this.panels = new Panels(this, this.config.defaults); // Collection
+    // 大可不必
+    for (var name in panelConfig) {
       //@ts-ignore
-      if (!(name in this.config)) this.config[name] = defaults[name];
+      if (!(name in this.config)) this.config[name] = panelConfig[name];
     }
     return this;
   }

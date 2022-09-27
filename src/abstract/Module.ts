@@ -67,6 +67,7 @@ export default abstract class Module<T extends ModuleConfig = ModuleConfig> impl
   onLoad?(): void;
   init(cfg: T) {}
   abstract destroy(): void;
+  // 重要方法
   abstract render(): HTMLElement | JQuery<HTMLElement> | undefined;
   postLoad(key: any): void {}
 
@@ -95,6 +96,7 @@ export default abstract class Module<T extends ModuleConfig = ModuleConfig> impl
     if (elTo) {
       const el = isElement(elTo) ? elTo : document.querySelector(elTo);
       if (!el) return this.__logWarn('"appendTo" element not found');
+      // dom es5
       el.appendChild(this.render());
     }
   }

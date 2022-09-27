@@ -315,7 +315,7 @@ export default class EditorModel extends Model {
     this.set('Editor', editor);
   }
 
-  getEditor() {
+  getEditor(): EditorModule {
     return this.get('Editor');
   }
 
