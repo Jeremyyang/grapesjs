@@ -5,12 +5,12 @@ export default {
     const lmConfig = lm.getConfig();
     // 注释掉是因为：return 将无法用到内置的 appendContent 等响应操作
     // if (lmConfig.appendTo) return;
-    const appendTo = lmConfig.appendTo;
+    const injectTo = lmConfig.injectTo;
 
     if (!this.layers) {
       const id = 'layers-viewer';
       const layers = document.createElement('div');
-      const panels = pn.getPanel(id) || pn.addPanel({ id, appendTo });
+      const panels = pn.getPanel(id) || pn.addPanel({ id, appendTo: injectTo });
 
       if (lmConfig.custom) {
         lm.__trgCustom({ container: layers });

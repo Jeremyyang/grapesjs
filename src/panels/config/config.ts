@@ -1,9 +1,6 @@
 const swv = 'sw-visibility';
-const expt = 'export-template';
+// const expt = 'export-code';
 const osm = 'open-sm';
-const otm = 'open-tm';
-const ola = 'open-layers';
-const obl = 'open-blocks';
 const ful = 'fullscreen';
 const prv = 'preview';
 
@@ -21,7 +18,12 @@ type btnT =
 
 export type panelConfigT = {
   stylePrefix: string;
-  defaults: { id: string; appendTo?: string; buttons: btnT[] }[];
+  defaults: {
+    id: string;
+    appendTo?: string; // dom for postRender
+    injectTo?: string; // dom for nextRender or dynamic render
+    buttons: btnT[];
+  }[];
   em: any;
   delayBtnsShow: number;
 };
@@ -42,10 +44,13 @@ const panelConfig: panelConfigT = {
         {
           active: true,
           id: swv,
-          className: 'fa fa-square-o',
+          className: 'frame-line-icon',
           command: swv,
           context: swv,
           attributes: { title: 'View frame line' },
+          label: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M15 5h2V3h-2m0 18h2v-2h-2M11 5h2V3h-2m8 2h2V3h-2m0 6h2V7h-2m0 14h2v-2h-2m0-6h2v-2h-2m0 6h2v-2h-2M3 5h2V3H3m0 6h2V7H3m0 6h2v-2H3m0 6h2v-2H3m0 6h2v-2H3m8 2h2v-2h-2m-4 2h2v-2H7M7 5h2V3H7v2z"></path>
+          </svg>`,
         },
         {
           id: ful,
@@ -62,10 +67,17 @@ const panelConfig: panelConfigT = {
           attributes: { title: 'Preview' },
         },
         // {
-        //   id: expt,
-        //   className: 'fa fa-code',
-        //   command: expt,
-        //   attributes: { title: 'View code' },
+        //   id: 'undo',
+        //   command: 'core:undo',
+        //   label: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        //       <path fill="currentColor" d="M20 13.5C20 17.09 17.09 20 13.5 20H6V18H13.5C16 18 18 16 18 13.5S16 9 13.5 9H7.83L10.91 12.09L9.5 13.5L4 8L9.5 2.5L10.92 3.91L7.83 7H13.5C17.09 7 20 9.91 20 13.5Z" />
+        //   </svg>`
+        // },{
+        //   id: 'redo',
+        //   command: 'core:redo',
+        //   label: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        //       <path fill="currentColor" d="M10.5 18H18V20H10.5C6.91 20 4 17.09 4 13.5S6.91 7 10.5 7H16.17L13.08 3.91L14.5 2.5L20 8L14.5 13.5L13.09 12.09L16.17 9H10.5C8 9 6 11 6 13.5S8 18 10.5 18Z" />
+        //   </svg>`,
         // },
       ],
     },

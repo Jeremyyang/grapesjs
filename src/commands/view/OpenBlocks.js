@@ -4,7 +4,7 @@ import { createEl } from '../../utils/dom';
 export default {
   open() {
     const { container, editor, bm, config } = this;
-    const { custom, appendTo } = config;
+    const { custom, injectTo } = config;
 
     if (isFunction(custom.open)) {
       return custom.open(bm.__customData());
@@ -13,7 +13,7 @@ export default {
     if (this.firstRender) {
       const id = 'blocks-viewer';
       const pn = editor.Panels;
-      const panels = pn.getPanel(id) || pn.addPanel({ id, appendTo });
+      const panels = pn.getPanel(id) || pn.addPanel({ id, appendTo: injectTo });
       panels.set('appendContent', container).trigger('change:appendContent');
       if (!custom) container.appendChild(bm.render());
     }

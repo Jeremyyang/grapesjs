@@ -113,7 +113,6 @@ export default class PanelView extends View<Panel> {
     const ppfx = this.ppfx;
     const cls = `${this.className} ${this.id} ${ppfx}one-bg ${ppfx}two-color`;
     $el.addClass(cls);
-    console.log($el[0]);
 
     this.toggleVisible();
 

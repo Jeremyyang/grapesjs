@@ -99,7 +99,22 @@
 <body>
   <div class="container">
     <header>
-      <div><a class="fa fa-home" aria-hidden="true" href="#"></a></div>
+      <div style="width: 30px;"><a aria-hidden="true" href="#">
+          <svg width="100%" height="100%" viewBox="0 0 125 120" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="编组">
+                <path
+                  d="M60,0.5 C78.3306495,0.5 101.058233,8.76826427 114.077332,21.7873633 C119.504117,27.2141485 123.241792,33.4679276 124.2283,40.2995049 C125.107416,46.3873958 123.795086,52.9268964 119.574995,59.7366175 C115.363588,66.5323254 111.74893,73.0643627 108.37832,79.1557177 C101.056671,92.3873797 94.9037003,103.537474 86.2346958,110.747857 C79.5546085,116.303972 71.3740659,119.5 60,119.5 C43.5695287,119.5 28.6945287,112.840236 17.9271465,102.072853 C7.15976435,91.3054713 0.5,76.4304713 0.5,60 C0.5,43.5695287 7.15976435,28.6945287 17.9271465,17.9271465 C28.6945287,7.15976435 43.5695287,0.5 60,0.5 Z"
+                  id="椭圆形" stroke="#FFAB00" fill="#FF8950"></path>
+                <rect fill="#0071FF" x="55" y="0" width="10" height="120" rx="5"></rect>
+                <rect fill="#00C500" x="0" y="55" width="119" height="10" rx="5"></rect>
+                <rect fill="#FF0027" x="55" y="55" width="10" height="10"></rect>
+              </g>
+            </g>
+          </svg>
+        </a>
+      </div>
       <div class="device-btns"></div>
       <div class="view-btns"></div>
       <div class="paint-btns"></div>
@@ -113,67 +128,73 @@
       <main>
         <div id="main-editor" style="height:0px; overflow:hidden;">
           <div class="panel">
-          <h1 class="welcome">Welcome to</h1>
-          <div class="big-title">
-            <svg class="logo" viewBox="0 0 100 100">
-              <path
-                d="M40 5l-12.9 7.4 -12.9 7.4c-1.4 0.8-2.7 2.3-3.7 3.9 -0.9 1.6-1.5 3.5-1.5 5.1v14.9 14.9c0 1.7 0.6 3.5 1.5 5.1 0.9 1.6 2.2 3.1 3.7 3.9l12.9 7.4 12.9 7.4c1.4 0.8 3.3 1.2 5.2 1.2 1.9 0 3.8-0.4 5.2-1.2l12.9-7.4 12.9-7.4c1.4-0.8 2.7-2.2 3.7-3.9 0.9-1.6 1.5-3.5 1.5-5.1v-14.9 -12.7c0-4.6-3.8-6-6.8-4.2l-28 16.2" />
-            </svg>
-            <span>PagePai</span>
+            <h1 class="welcome">Welcome to</h1>
+            <div class="big-title">
+              <svg class="logo" width="100%" height="100%" viewBox="0 0 125 120" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" id="test-logo">
+            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="编组">
+                <path
+                  d="M60,0.5 C78.3306495,0.5 101.058233,8.76826427 114.077332,21.7873633 C119.504117,27.2141485 123.241792,33.4679276 124.2283,40.2995049 C125.107416,46.3873958 123.795086,52.9268964 119.574995,59.7366175 C115.363588,66.5323254 111.74893,73.0643627 108.37832,79.1557177 C101.056671,92.3873797 94.9037003,103.537474 86.2346958,110.747857 C79.5546085,116.303972 71.3740659,119.5 60,119.5 C43.5695287,119.5 28.6945287,112.840236 17.9271465,102.072853 C7.15976435,91.3054713 0.5,76.4304713 0.5,60 C0.5,43.5695287 7.15976435,28.6945287 17.9271465,17.9271465 C28.6945287,7.15976435 43.5695287,0.5 60,0.5 Z"
+                  id="椭圆形" stroke="#FFAB00" fill="#FF8950"></path>
+                <rect fill="#0071FF" x="55" y="0" width="10" height="120" rx="5"></rect>
+                <rect fill="#00C500" x="0" y="55" width="119" height="10" rx="5"></rect>
+                <rect fill="#FF0027" x="55" y="55" width="10" height="10"></rect>
+              </g>
+            </g>
+          </svg>
+              <strong>PagePai</strong>
+            </div>
+            <div class="description">
+              <p>DTC 自己的低代码编辑器。</p>
+            </div>
           </div>
-          <div class="description">
-            This is a demo content from index.html. For the development, you shouldn't edit this file, instead you can
-            copy and rename it to _index.html, on next server start the new file will be served, and it will be ignored
-            by
-            git.
-          </div>
-        </div>
-        <style>
-          .panel {
-            width: 90%;
-            max-width: 700px;
-            border-radius: 3px;
-            padding: 30px 20px;
-            margin: 150px auto 0px;
-            background-color: #d983a6;
-            box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.25);
-            color: rgba(255, 255, 255, 0.75);
-            font: caption;
-            font-weight: 100;
-          }
+          <style>
+            .panel {
+              width: 90%;
+              max-width: 700px;
+              border-radius: 3px;
+              padding: 30px 20px;
+              margin: 150px auto 0px;
+              background-color: #8bc34a;
+              box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.25);
+              color: rgba(255, 255, 255, 0.75);
+              font: caption;
+              font-weight: 100;
+            }
 
-          .welcome {
-            text-align: center;
-            font-weight: 100;
-            margin: 0px;
-          }
+            .welcome {
+              text-align: center;
+              font-weight: 100;
+              margin: 0px;
+            }
 
-          .logo {
-            width: 70px;
-            height: 70px;
-            vertical-align: middle;
-          }
+            .logo {
+              width: 70px;
+              height: 70px;
+              vertical-align: middle;
+            }
+            #test-logo{width: 71px}
 
-          .logo path {
-            pointer-events: none;
-            fill: none;
-            stroke-linecap: round;
-            stroke-width: 7;
-            stroke: #fff
-          }
+            .logo path {
+              pointer-events: none;
+              fill: none;
+              stroke-linecap: round;
+              stroke-width: 7;
+            }
 
-          .big-title {
-            text-align: center;
-            font-size: 3.5rem;
-            margin: 15px 0;
-          }
+            .big-title {
+              text-align: center;
+              font-size: 3.5rem;
+              margin: 15px 0;
+            }
 
-          .description {
-            text-align: justify;
-            font-size: 1rem;
-            line-height: 1.5rem;
-          }
-        </style>
+            .description {
+              text-align: justify;
+              font-size: 1rem;
+              line-height: 1.5rem;
+            }
+          </style>
         </div>
       </main>
     </div>
@@ -182,8 +203,12 @@
   <script src="https://unpkg.com/grapesjs-tabs"></script>
   <script src="https://unpkg.com/grapesjs-custom-code"></script>
   <script src="https://unpkg.com/grapesjs-component-countdown"></script>
+  <script src="https://unpkg.com/grapesjs-echarts.min.js"></script>
+  <script src="https://unpkg.com/grapesjs-preset-webpage"></script>
+  <script src="https://unpkg.com/grapesjs-blocks-basic"></script>
   <!-- <script src="https://unpkg.com/grapesjs-lory-slider"></script> bug -->
   <!-- <script src="https://unpkg.com/grapesjs-blocks-basic@1.0.1/dist/index.js"></script> -->
+  <!-- git@github.com:kaoz70/grapesjs-swiper-slider.git -->
   <script type="text/javascript">
     var editor = grapesjs.init({
       showOffsets: 1,
@@ -196,15 +221,17 @@
         'grapesjs-custom-code', // 有 bug
         'grapesjs-component-countdown',  // 有 bug 无法配置启动计时
         'grapesjs-lory-slider',  // 有 bug 无法加载
+        'grapesjs-echarts',
+        // 'grapesjs-preset-webpage',
       ],
       height: '100%',
       fromElement: true,
       storageManager: { autoload: 0 },
       layerManager: {
-        appendTo: '#kits-drawer'
+        injectTo: '#kits-drawer'
       },
       blockManager: {
-        appendTo: '#kits-drawer'
+        injectTo: '#kits-drawer'
       },
       styleManager: {
         sectors: [{
@@ -260,6 +287,25 @@
           togglable: true,
           attributes: { title: 'Open Layer Manager' },
         },
+        {
+          id: 'open-shopify-blocks',
+          className: 'shopify-icon',
+          command: 'open-shopify-blocks',
+          label: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160"><path fill="#95BF47" d="M130.7 32.9c-.1-.9-.9-1.3-1.5-1.4-.6-.1-12.6-.2-12.6-.2s-10.1-9.8-11.1-10.8-2.9-.7-3.7-.5c0 0-1.9.6-5.1 1.6-.5-1.7-1.3-3.8-2.4-5.9-3.6-6.9-8.8-10.5-15.2-10.5-.4 0-.9 0-1.3.1-.2-.2-.4-.4-.6-.7-2.8-3-6.3-4.4-10.5-4.3-8.2.2-16.3 6.1-23 16.7-4.7 7.4-8.2 16.7-9.2 23.9-9.4 2.9-16 4.9-16.1 5-4.7 1.5-4.9 1.6-5.5 6.1C12.4 55.3 0 151.4 0 151.4l104.1 18 45.1-11.2S130.8 33.7 130.7 32.9zm-39.2-9.7c-2.4.7-5.1 1.6-8.1 2.5-.1-4.1-.6-9.9-2.5-14.9 6.3 1.2 9.3 8.2 10.6 12.4zM78 27.4c-5.5 1.7-11.4 3.5-17.4 5.4 1.7-6.4 4.9-12.8 8.8-17 1.5-1.6 3.5-3.3 5.9-4.3 2.3 4.7 2.7 11.4 2.7 15.9zM66.8 5.8c1.9 0 3.5.4 4.9 1.3-2.2 1.1-4.4 2.8-6.4 5-5.2 5.6-9.2 14.2-10.8 22.6-5 1.5-9.8 3-14.3 4.4"></path><path fill="#FFF" d="M79.1 54.7l-5.2 19.6s-5.8-2.7-12.8-2.2c-10.2.6-10.3 7-10.2 8.7.6 8.8 23.6 10.7 24.9 31.2 1 16.2-8.6 27.2-22.4 28.1-16.6 1-25.7-8.7-25.7-8.7l3.5-14.9s9.2 6.9 16.5 6.5c4.8-.3 6.5-4.2 6.3-7-.7-11.4-19.5-10.8-20.7-29.5-1-15.8 9.4-31.8 32.3-33.3 9-.8 13.5 1.5 13.5 1.5"></path>
+            </svg>`,
+          togglable: true,
+          attributes: { title: 'Open Shopify Blocks' },
+        },
+        {
+          id: 'open-components',
+          className: 'cute-icon',
+          command: 'open-components',
+          label: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18-.21 0-.41-.06-.57-.18l-7.9-4.44A.991.991 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.12.36-.18.57-.18.21 0 .41.06.57.18l7.9 4.44c.32.17.53.5.53.88v9M12 4.15L6.04 7.5 12 10.85l5.96-3.35L12 4.15M5 15.91l6 3.38v-6.71L5 9.21v6.7m14 0v-6.7l-6 3.37v6.71l6-3.38z"></path>
+          </svg>`,
+          togglable: true,
+          attributes: { title: 'Open My Components' },
+        },
       ]
     });
 
@@ -274,11 +320,10 @@
           attributes: { title: 'View code' },
         },
         {
-          id: 'open-tm',
+          id: 'open-config',
           className: 'fa fa-cog',
-          command: 'open-tm',
-          togglable: false,
-          attributes: { title: 'Settings' },
+          command: 'open-config',
+          attributes: { title: 'Configurations' },
         },
       ]
     });
