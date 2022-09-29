@@ -9,6 +9,8 @@ import Component from '../../dom_components/model/Component';
 import Selector from '../model/Selector';
 import Selectors from '../model/Selectors';
 
+// ClassTagsView 类，专门处理 classes:state selected 这块区域的
+// 并且，这里的 Tag 解释为 class tag 即 css  class 名
 export default class ClassTagsView extends View<Selector> {
   template({ labelInfo, labelHead, iconSync, iconAdd, pfx, ppfx }: any) {
     return html` <div id="${pfx}up" class="${pfx}header">
@@ -79,11 +81,13 @@ export default class ClassTagsView extends View<Selector> {
     this.target = em;
     const md = em.get('SelectorManager');
     this.module = md;
-    this.em = em;
+    this.em = em; // EditorModel
     this.componentChanged = debounce(this.componentChanged.bind(this), 0);
     this.checkSync = debounce(this.checkSync.bind(this), 0);
     const toList = 'component:toggled component:update:classes';
     const toListCls = 'component:update:classes change:state';
+    // em 对象监听(on)下述事件，当事件触发时，以 this 为上下文执行下述方法
+    // 语意的说：this listen to em, em 监听到的下述事件，将以 this 为上下文执行相应的方法
     this.listenTo(em, toList, this.componentChanged);
     this.listenTo(em, 'styleManager:update', this.componentChanged);
     this.listenTo(em, toListCls, this.__handleStateChange);

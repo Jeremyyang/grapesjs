@@ -525,6 +525,7 @@ export default class ComponentManager extends ItemManagerModule {
   }
 
   selectAdd(component: Component, opts = {}) {
+    console.log('component selectAdd');
     if (component) {
       component.set({
         status: 'selected',
@@ -534,6 +535,7 @@ export default class ComponentManager extends ItemManagerModule {
   }
 
   selectRemove(component: Component, opts = {}) {
+    console.log('component selectRemove');
     if (component) {
       const { em } = this;
       component.set({
