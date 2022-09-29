@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>GrapesJS</title>
+  <!-- https://fontawesome.com/v4/icons/ -->
   <link rel="stylesheet" href="dist/css/grapes.min.css">
   <script src="grapes.min.js"></script>
   <style>
@@ -24,7 +25,7 @@
     }
 
     .main main {
-      width: calc(100% - 50px);
+      flex-grow: 1;
     }
 
     header {
@@ -93,6 +94,13 @@
     #main-editor .gjs-pn-views-container {
       padding: 0
     }
+    .traits-panel, .gjs-clm-tags{background-color:#6b6864;}
+    .traits-panel .gjs-trt-traits{background-color: inherit;}
+
+    .gjs-clm-tags-header {
+      display: flex;
+      align-items: center;
+    }
   </style>
 </head>
 
@@ -120,7 +128,7 @@
       <div class="paint-btns"></div>
     </header>
     <div class="main">
-      <aside class="left-bar">
+      <aside id="left-bar" class="left-bar">
         <div class="top-btns"></div>
         <div class="bottom-btns"></div>
         <div id="kits-drawer"></div>
@@ -130,19 +138,19 @@
           <div class="panel">
             <h1 class="welcome">Welcome to</h1>
             <div class="big-title">
-              <svg class="logo" width="100%" height="100%" viewBox="0 0 125 120" version="1.1" xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink" id="test-logo">
-            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-              <g id="编组">
-                <path
-                  d="M60,0.5 C78.3306495,0.5 101.058233,8.76826427 114.077332,21.7873633 C119.504117,27.2141485 123.241792,33.4679276 124.2283,40.2995049 C125.107416,46.3873958 123.795086,52.9268964 119.574995,59.7366175 C115.363588,66.5323254 111.74893,73.0643627 108.37832,79.1557177 C101.056671,92.3873797 94.9037003,103.537474 86.2346958,110.747857 C79.5546085,116.303972 71.3740659,119.5 60,119.5 C43.5695287,119.5 28.6945287,112.840236 17.9271465,102.072853 C7.15976435,91.3054713 0.5,76.4304713 0.5,60 C0.5,43.5695287 7.15976435,28.6945287 17.9271465,17.9271465 C28.6945287,7.15976435 43.5695287,0.5 60,0.5 Z"
-                  id="椭圆形" stroke="#FFAB00" fill="#FF8950"></path>
-                <rect fill="#0071FF" x="55" y="0" width="10" height="120" rx="5"></rect>
-                <rect fill="#00C500" x="0" y="55" width="119" height="10" rx="5"></rect>
-                <rect fill="#FF0027" x="55" y="55" width="10" height="10"></rect>
-              </g>
-            </g>
-          </svg>
+              <svg class="logo" width="100%" height="100%" viewBox="0 0 125 120" version="1.1"
+                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="test-logo">
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="编组">
+                    <path
+                      d="M60,0.5 C78.3306495,0.5 101.058233,8.76826427 114.077332,21.7873633 C119.504117,27.2141485 123.241792,33.4679276 124.2283,40.2995049 C125.107416,46.3873958 123.795086,52.9268964 119.574995,59.7366175 C115.363588,66.5323254 111.74893,73.0643627 108.37832,79.1557177 C101.056671,92.3873797 94.9037003,103.537474 86.2346958,110.747857 C79.5546085,116.303972 71.3740659,119.5 60,119.5 C43.5695287,119.5 28.6945287,112.840236 17.9271465,102.072853 C7.15976435,91.3054713 0.5,76.4304713 0.5,60 C0.5,43.5695287 7.15976435,28.6945287 17.9271465,17.9271465 C28.6945287,7.15976435 43.5695287,0.5 60,0.5 Z"
+                      id="椭圆形" stroke="#FFAB00" fill="#FF8950"></path>
+                    <rect fill="#0071FF" x="55" y="0" width="10" height="120" rx="5"></rect>
+                    <rect fill="#00C500" x="0" y="55" width="119" height="10" rx="5"></rect>
+                    <rect fill="#FF0027" x="55" y="55" width="10" height="10"></rect>
+                  </g>
+                </g>
+              </svg>
               <strong>PagePai</strong>
             </div>
             <div class="description">
@@ -174,7 +182,10 @@
               height: 70px;
               vertical-align: middle;
             }
-            #test-logo{width: 71px}
+
+            #test-logo {
+              width: 71px
+            }
 
             .logo path {
               pointer-events: none;
@@ -325,13 +336,6 @@
           command: 'open-config',
           attributes: { title: 'Configurations' },
         },
-        {
-          id: 'open-tm',
-          className: 'fa fa-cog',
-          command: 'open-tm',
-          attributes: { title: 'Open traits' },
-        },
-        
       ]
     });
 

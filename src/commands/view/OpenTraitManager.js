@@ -17,16 +17,18 @@ export default {
 
     if (!this.$cn) {
       this.$cn = $('<div></div>');
-      this.$cn2 = $('<div></div>');
+      this.$cn2 = $('<div class="traits-panel"></div>');
       this.$cn.append(this.$cn2);
       this.$header = $('<div>').append(`<div class="${confTm.stylePrefix}header">${em.t('traitManager.empty')}</div>`);
       this.$cn.append(this.$header);
       this.$cn2.append(`<div class="${pfx}traits-label">${em.t('traitManager.label')}</div>`);
       this.$cn2.append(tm.render());
       var panels = editor.Panels;
-
-      if (!panels.getPanel('views-container')) panelC = panels.addPanel({ id: 'views-container' });
-      else panelC = panels.getPanel('views-container');
+      // 默认是加到 views-container 组件下的
+      panelC = panels.getPanel('views-container');
+      if (!panelC) {
+        panelC = panels.addPanel({ id: 'views-container' });
+      }
 
       panelC.set('appendContent', this.$cn.get(0)).trigger('change:appendContent');
 

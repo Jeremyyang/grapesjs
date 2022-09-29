@@ -57,6 +57,8 @@ export default {
     this.helper.style.display = 'inline-block';
 
     panels.forEach(panel => panel.set('visible', false));
+    // 因为布局定制调整，预览时某些元素需手动处理隐藏
+    document.querySelector('#left-bar').style.display = 'none';
 
     const canvasS = canvas.style;
     canvasS.width = '100%';
@@ -81,6 +83,8 @@ export default {
 
     editor.getModel().runDefault();
     panels.forEach(panel => panel.set('visible', true));
+    // 因为布局定制调整，预览时某些元素需手动处理隐藏
+    document.querySelector('#left-bar').style.display = 'flex';
 
     const canvas = editor.Canvas.getElement();
     canvas.setAttribute('style', '');

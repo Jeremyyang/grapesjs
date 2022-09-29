@@ -4,6 +4,7 @@ const $ = Backbone.$;
 export default {
   run(editor, sender) {
     this.sender = sender;
+    console.log('run OpenStyleManager?');
 
     if (!this.$cn) {
       const config = editor.getConfig();

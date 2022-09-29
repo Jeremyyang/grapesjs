@@ -13,7 +13,11 @@ import Selectors from '../model/Selectors';
 // 并且，这里的 Tag 解释为 class tag 即 css  class 名
 export default class ClassTagsView extends View<Selector> {
   template({ labelInfo, labelHead, iconSync, iconAdd, pfx, ppfx }: any) {
-    return html` <div id="${pfx}up" class="${pfx}header">
+    return html`<div class="gjs-sm-sector-title gjs-clm-tags-header">
+        <!--div class="gjs-clm-tags-caret"></div-->
+        <div class="gjs-clm-tags-label">Class Tags</div>
+      </div>
+      <div id="${pfx}up" class="${pfx}header">
         <div id="${pfx}label" class="${pfx}header-label">${labelHead}</div>
         <div id="${pfx}status-c" class="${pfx}header-status">
           <span id="${pfx}input-c" data-states-c>
@@ -72,7 +76,7 @@ export default class ClassTagsView extends View<Selector> {
     this.config = o.config || {};
     this.pfx = this.config.stylePrefix || '';
     this.ppfx = this.config.pStylePrefix || '';
-    this.className = this.pfx + 'tags';
+    this.className = this.pfx + 'tags'; // root element
     this.stateInputId = this.pfx + 'states';
     this.stateInputC = this.pfx + 'input-c';
     this.states = this.config.states || [];
