@@ -16,6 +16,7 @@ import { isFunction } from 'underscore';
  * @module docsjs.Block
  */
 export default class Block extends Model {
+  // 按 backbone 的 Model 定义，defaults 对象（/方法）下每个 attr 都是响应式的
   defaults() {
     return {
       label: '',

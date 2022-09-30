@@ -79,6 +79,7 @@
     #kits-drawer .gjs-pn-layers-viewer,
     #kits-drawer .gjs-pn-blocks-viewer {
       height: calc(100vh - 40px);
+      overflow: scroll;
     }
 
     /* 覆盖 */
@@ -94,12 +95,36 @@
     #main-editor .gjs-pn-views-container {
       padding: 0
     }
-    .traits-panel, .gjs-clm-tags{background-color:#6b6864;}
-    .traits-panel .gjs-trt-traits{background-color: inherit;}
+
+    .traits-panel,
+    .gjs-clm-tags {
+      background-color: #6b6864;
+    }
+
+    .traits-panel .gjs-trt-traits {
+      background-color: inherit;
+    }
 
     .gjs-clm-tags-header {
       display: flex;
       align-items: center;
+    }
+
+    #kits-drawer .gjs-block {
+      width: 30%;
+      margin: 10px 1.5% 5px;
+      min-height: auto;
+      padding: 0 0 5px;
+    }
+
+    #kits-drawer .gjs-block-label {
+      text-overflow: initial;
+      white-space: nowrap;
+    }
+
+    #kits-drawer .gjs-block__media {
+      margin-bottom: 0;
+      padding: 10px 10px 5px;
     }
   </style>
 </head>
@@ -212,13 +237,12 @@
   </div>
   <script src="https://unpkg.com/grapesjs-plugin-export@1.0.11/dist/index.js"></script>
   <script src="https://unpkg.com/grapesjs-tabs"></script>
-  <script src="https://unpkg.com/grapesjs-custom-code"></script>
+  <!-- <script src="https://unpkg.com/grapesjs-custom-code"></script> -->
   <script src="https://unpkg.com/grapesjs-component-countdown"></script>
-  <script src="https://unpkg.com/grapesjs-echarts.min.js"></script>
-  <script src="https://unpkg.com/grapesjs-preset-webpage"></script>
-  <script src="https://unpkg.com/grapesjs-blocks-basic"></script>
+  <!-- <script src="https://unpkg.com/grapesjs-echarts.min.js"></script> -->
+  <!-- <script src="https://unpkg.com/grapesjs-preset-webpage"></script> -->
+  <script src="./plugins/grapesjs-blocks-basic/dist/index.js"></script>
   <!-- <script src="https://unpkg.com/grapesjs-lory-slider"></script> bug -->
-  <!-- <script src="https://unpkg.com/grapesjs-blocks-basic@1.0.1/dist/index.js"></script> -->
   <!-- git@github.com:kaoz70/grapesjs-swiper-slider.git -->
   <script type="text/javascript">
     var editor = grapesjs.init({
@@ -226,15 +250,18 @@
       noticeOnUnload: 0,
       container: '#main-editor',
       plugins: [
-        'grapesjs-plugin-export',
-        'grapesjs-blocks-basic', // 只能用 es6方式调用
+        // 'grapesjs-plugin-export',
+        'gjs-blocks-basic', // gjs 名称坑爹啊
         'grapesjs-tabs',
-        'grapesjs-custom-code', // 有 bug
+        // 'grapesjs-custom-code', // 有 bug
         'grapesjs-component-countdown',  // 有 bug 无法配置启动计时
-        'grapesjs-lory-slider',  // 有 bug 无法加载
-        'grapesjs-echarts',
+        // 'grapesjs-lory-slider',  // 有 bug 无法加载
+        // 'grapesjs-echarts',
         // 'grapesjs-preset-webpage',
       ],
+      pluginsOpts: {
+        'gjs-blocks-basic': { flexGrid: true },
+      },
       height: '100%',
       fromElement: true,
       storageManager: { autoload: 0 },
@@ -338,13 +365,6 @@
         },
       ]
     });
-
-    editor.BlockManager.add('testBlock', {
-      category: 'Basic',
-      label: 'Block',
-      attributes: { class: 'gjs-fonts gjs-f-b1' },
-      content: `<div style="padding-top:50px; padding-bottom:50px; text-align:center">Test block</div>`
-    })
   </script>
 </body>
 

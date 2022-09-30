@@ -14,6 +14,10 @@ export default class BlocksView extends View {
     this.noCatClass = `${ppfx}blocks-no-cat`;
     this.blockContClass = `${ppfx}blocks-c`;
     this.catsClass = `${ppfx}block-categories`;
+    // View 最后是继承自 Events
+    // View 还自带了一个 collection 对象，它也是继承自 Events
+    // BlocksView 在实例化时候，collection<modal>作为参数，就赋给了父类 View（详见Backbone.View实现）
+    // 等于说，BlocksView 一开始就拿到了 this.collection<model>.length 个数据，在render时即渲染成视图
     const coll = this.collection;
     this.listenTo(coll, 'add', this.addTo);
     this.listenTo(coll, 'reset', this.render);
@@ -114,6 +118,7 @@ export default class BlocksView extends View {
   add(model, fragment) {
     const { config } = this;
     var frag = fragment || null;
+    // 给每一个 model 创建一个 view
     var view = new BlockView(
       {
         model,
@@ -121,7 +126,9 @@ export default class BlocksView extends View {
       },
       config
     );
+    // view 的 root Element
     var rendered = view.render().el;
+    // 找出此 model 的所属 category<string>
     var category = model.get('category');
 
     // Check for categories
@@ -134,7 +141,9 @@ export default class BlocksView extends View {
       } else if (isObject(category) && !category.id) {
         category.id = category.label;
       }
-
+      // this.categories 早在 BlocksView 被实例化时候即以参数形式传入
+      // 且它是一个 Collection 类型
+      // todo 如果改下成 .ts 就省了类型推断
       var catModel = this.categories.add(category);
       var catId = catModel.get('id');
       var catView = this.renderedCategories[catId];
@@ -193,7 +202,6 @@ export default class BlocksView extends View {
         <div class="${this.blockContClass}"></div>
       </div>
     `;
-
     this.collection.each(model => this.add(model, frag));
     this.append(frag);
     const cls = `${this.blockContClass}s ${ppfx}one-bg ${ppfx}two-color`;
