@@ -1148,6 +1148,7 @@ export default class Component extends StyleableModel {
     }
   }
 
+  // 初始化 Component 时，会读取其配置中 'traits' 字段
   __loadTraits(tr, opts = {}) {
     let traitsI = tr || this.get('traits');
 

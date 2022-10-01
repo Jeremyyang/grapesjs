@@ -123,6 +123,7 @@ export default class BlockManager extends Module {
     };
   }
 
+  // 拖动 block 即通知 Compontent 将 content 转成 compontent
   __startDrag(block, ev) {
     const { em, events, blocks } = this;
     const content = block.getContent ? block.getContent() : block;

@@ -224,7 +224,7 @@ export default class SelectorManager extends Module {
     const config = this.getConfig();
     const all = this.getAll();
     const em = this.em;
-    const selector = cname ? this.get(cname, props.type) : all.where(props)[0];
+    const selector: Selector = cname ? this.get(cname, props.type) : all.where(props)[0];
 
     if (!selector) {
       const selModel = props instanceof Selector ? props : new Selector(props, { ...cOpts, config, em });
@@ -247,6 +247,7 @@ export default class SelectorManager extends Module {
 
   /**
    * Add a new selector to the collection if it does not already exist.
+   * (这里的 selector 就是 css 选择器 ~= class)
    * You can pass selectors properties or string identifiers.
    * @param {Object|String} props Selector properties or string identifiers, eg. `{ name: 'my-class', label: 'My class' }`, `.my-cls`
    * @param {Object} [opts] Selector options
@@ -258,7 +259,7 @@ export default class SelectorManager extends Module {
    * const selector = selectorManager.add('.my-class');
    * console.log(selector.toString()) // `.my-class`
    * */
-  add(props: string | { name?: string; label?: string }, opts = {}) {
+  add(props: string | { name?: string; label?: string }, opts = {}): Selector | Selector[] {
     const cOpts = isString(props) ? {} : opts;
     // Keep support for arrays but avoid it in docs
     if (isArray(props)) {
@@ -280,7 +281,7 @@ export default class SelectorManager extends Module {
    * // -> [SelectorObject, ...]
    */
   addClass(classes: string | string[]) {
-    const added: any = [];
+    const added: Selector[] = [];
 
     if (isString(classes)) {
       classes = classes.trim().split(' ');
@@ -390,6 +391,7 @@ export default class SelectorManager extends Module {
     const added = this.add(props);
     // TODO: target should be the one from StyleManager
     this.em.getSelectedAll().forEach(target => {
+      // Component Selectors add a new selector
       target.getSelectors().add(added);
     });
     // TODO: update selected collection

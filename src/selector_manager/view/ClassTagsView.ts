@@ -82,7 +82,7 @@ export default class ClassTagsView extends View<Selector> {
     this.states = this.config.states || [];
     const { em } = this.config;
     const coll = this.collection;
-    this.target = em;
+    this.target = em; // EditorModel
     const md = em.get('SelectorManager');
     this.module = md;
     this.em = em; // EditorModel

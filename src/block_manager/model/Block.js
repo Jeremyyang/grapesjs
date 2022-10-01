@@ -20,6 +20,7 @@ export default class Block extends Model {
   defaults() {
     return {
       label: '',
+      // The content of the block. Might be an HTML string or a Component Defintion
       content: '',
       media: '',
       category: '',
