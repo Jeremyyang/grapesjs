@@ -235,24 +235,28 @@
       </main>
     </div>
   </div>
-  <script src="https://unpkg.com/grapesjs-plugin-export@1.0.11/dist/index.js"></script>
+  <!-- <script src="https://unpkg.com/grapesjs-style-gradient"></script> -->
   <script src="https://unpkg.com/grapesjs-tabs"></script>
+  <script src="https://unpkg.com/grapesjs-plugin-forms"></script>
   <!-- <script src="https://unpkg.com/grapesjs-custom-code"></script> -->
   <script src="https://unpkg.com/grapesjs-component-countdown"></script>
   <!-- <script src="https://unpkg.com/grapesjs-echarts.min.js"></script> -->
   <!-- <script src="https://unpkg.com/grapesjs-preset-webpage"></script> -->
-  <script src="./plugins/grapesjs-blocks-basic/dist/index.js"></script>
+  <script src="./plugins/grapesjs-editor-presets/dist/index.js"></script>
   <!-- <script src="https://unpkg.com/grapesjs-lory-slider"></script> bug -->
   <!-- git@github.com:kaoz70/grapesjs-swiper-slider.git -->
   <script type="text/javascript">
     var editor = grapesjs.init({
+      dragMode: 'translate', // 'absolute' | 'translate'
       showOffsets: 1,
       noticeOnUnload: 0,
       container: '#main-editor',
       plugins: [
-        // 'grapesjs-plugin-export',
-        'gjs-blocks-basic', // gjs 名称坑爹啊
+        // 'gjs-blocks-basic', // gjs 名称坑爹啊
+        'grapesjs-editor-presets',
         'grapesjs-tabs',
+        'grapesjs-plugin-forms',
+        // 'grapesjs-style-gradient', // 此插件有 bug
         // 'grapesjs-custom-code', // 有 bug
         'grapesjs-component-countdown',  // 有 bug 无法配置启动计时
         // 'grapesjs-lory-slider',  // 有 bug 无法加载
@@ -261,6 +265,13 @@
       ],
       pluginsOpts: {
         'gjs-blocks-basic': { flexGrid: true },
+        'grapesjs-style-gradient': {
+          colorPicker: 'default',
+          grapickOpts: {
+            min: 1,
+            max: 99,
+          }
+        }
       },
       height: '100%',
       fromElement: true,
@@ -303,6 +314,20 @@
         ],
       },
     });
+
+
+    editor.on('selector:add', selector => {
+      selector.set({
+        private: false, // hide the selector
+      });
+    });
+    // 此插件有 bug
+    // editor.StyleManager.addProperty('box_decorations', {
+    //   name: 'Gradient',
+    //   property: 'background-image',
+    //   type: 'gradient',
+    //   defaults: 'none'
+    // });
 
     editor.Panels.addPanel({
       id: 'asider-top',
@@ -359,6 +384,13 @@
           className: 'fa fa-code',
           command: 'export-code',
           attributes: { title: 'View code' },
+        },
+        {
+          id: 'open-import',
+          command: () => editor.runCommand('open-import'),
+          label: `<svg style="display: block; max-width:22px" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
+          </svg>`,
         },
         {
           id: 'open-config',

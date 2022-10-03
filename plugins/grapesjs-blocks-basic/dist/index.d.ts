@@ -1,1 +1,0 @@
-/Users/jeremy_mac1/pro/shopify/grapesjs-blocks-basic/dist/index.d.ts

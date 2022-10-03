@@ -193,8 +193,11 @@ export default class Components extends Backbone.Collection {
 
     return new model(attrs, options);
   }
-
+  // add 组件前，将字符串表示的组件，解析出来；
+  // 同时，将组件的 class (selector) 加入到 CssComposer 和 SelectorManager 进行管理
+  // 这段代码写的职责不明！
   parseString(value, opt = {}) {
+    console.log('component string', value);
     const { em, domc } = this;
     const cssc = em.get('CssComposer');
     const parsed = em.get('Parser').parseHtml(value);
