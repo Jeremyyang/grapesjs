@@ -274,6 +274,7 @@ export default class ClassTagsView extends View<Selector> {
 
   /**
    * Update selector helper
+   * 输入框下边的 Selector: 提示区
    * @return {this}
    * @private
    */

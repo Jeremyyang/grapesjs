@@ -384,6 +384,7 @@ export default class SelectorManager extends Module {
 
   /**
    * Add new selector to all selected components.
+   * 意思是：给选中(selected)的组件，添加(new selector)
    * @param {Object|String} props Selector properties or string identifiers, eg. `{ name: 'my-class', label: 'My class' }`, `.my-cls`
    * @example
    * selectorManager.addSelected('.new-class');
