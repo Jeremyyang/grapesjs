@@ -227,7 +227,7 @@ export default class SelectorManager extends Module {
     const selector: Selector = cname ? this.get(cname, props.type) : all.where(props)[0];
 
     if (!selector) {
-      console.warn('parseHtmlString to addSelector its props', props, this.all);
+      console.warn('add the selector with', props, this.all);
       const selModel = props instanceof Selector ? props : new Selector(props, { ...cOpts, config, em });
       return all.add(selModel, cOpts);
     }

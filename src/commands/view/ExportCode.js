@@ -1,7 +1,29 @@
 import Backbone from 'backbone';
-const $ = Backbone.$;
+// https://beautifier.io/
+import jsBeautify from 'js-beautify';
 
-const getJson = () => {};
+const $ = Backbone.$;
+const beautifyJs = str => {
+  return jsBeautify(str, {
+    indent_size: '4', // not work?
+    indent_char: '',
+    max_preserve_newlines: '10',
+    preserve_newlines: true,
+    wrap_line_length: '40',
+    brace_style: 'collapse',
+  });
+};
+
+const getJson = (editor, formater) => {
+  const jsonObj = {
+    version: __GJS_VERSION__,
+    data: editor.getProjectData(),
+    name: 'page name',
+  };
+
+  const json = JSON.stringify(jsonObj, null);
+  return typeof formater === 'function' ? formater(json) : json;
+};
 
 export default {
   run(editor, sender, opts = {}) {
@@ -35,7 +57,7 @@ export default {
       .once('change:open', () => editor.stopCommand(this.id));
     this.htmlEditor.setContent(editor.getHtml());
     this.cssEditor.setContent(editor.getCss());
-    // this.jsonEditor.setContent(getJson(editor));
+    this.jsonEditor.setContent(getJson(editor, beautifyJs));
   },
 
   stop(editor) {

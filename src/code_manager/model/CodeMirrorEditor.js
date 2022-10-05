@@ -8,7 +8,7 @@ if (hasWin()) {
   CodeMirror = require('codemirror/lib/codemirror');
   require('codemirror/mode/htmlmixed/htmlmixed');
   require('codemirror/mode/css/css');
-  require('codemirror/mode/javascript/javascript');
+  require('codemirror/mode/javascript/javascript'); // also for json
   require('codemirror-formatting');
 }
 
@@ -29,7 +29,7 @@ export default class CodeMirrorEditor extends Model {
     this.editor = CodeMirror.fromTextArea(el, {
       dragDrop: false,
       lineWrapping: true,
-      mode: this.get('codeName'), // json
+      mode: this.get('codeName'),
       ...this.attributes,
     });
     this.element = el;

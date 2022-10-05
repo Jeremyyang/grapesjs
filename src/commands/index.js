@@ -55,6 +55,7 @@ const commandsDef = [
   ['paste', 'PasteComponent'],
   ['canvas-move', 'CanvasMove'],
   ['canvas-clear', 'CanvasClear'],
+  ['save-page', 'SavePage', 'save-page'], // 非 core command 需加第三个元素作为 new name
   ['open-code', 'ExportCode', 'export-code'],
   // ['open-code', 'ExportCode', 'export-template'],
   ['open-layers', 'OpenLayers', 'open-layers'],

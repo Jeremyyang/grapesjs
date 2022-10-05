@@ -6,6 +6,7 @@
   <title>GrapesJS</title>
   <!-- https://fontawesome.com/v4/icons/ -->
   <link rel="stylesheet" href="dist/css/grapes.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/grapesjs-project-manager/dist/grapesjs-project-manager.min.css">
   <script src="grapes.min.js"></script>
   <style>
     body,
@@ -139,6 +140,10 @@
       width: 150%;
       display: flex;
     }
+    .gjs-mdl-container[data-custom-modal] .gjs-cm-editor-c{
+      float: none;
+    width: 33.3%;
+    }
   </style>
 </head>
 
@@ -259,6 +264,7 @@
   <script src="./plugins/grapesjs-editor-components/dist/index.js"></script>
   <!-- <script src="https://unpkg.com/grapesjs-lory-slider"></script> bug -->
   <!-- git@github.com:kaoz70/grapesjs-swiper-slider.git -->
+  <script src="https://unpkg.com/grapesjs-project-manager"></script>
   <script type="text/javascript">
     var editor = grapesjs.init({
       dragMode: 'translate', // 'absolute' | 'translate'
@@ -277,20 +283,26 @@
         // 'grapesjs-lory-slider',  // 有 bug 无法加载
         // 'grapesjs-echarts',
         // 'grapesjs-preset-webpage',
+        'grapesjs-project-manager',
       ],
       pluginsOpts: {
-        'gjs-blocks-basic': { flexGrid: true },
-        'grapesjs-style-gradient': {
-          colorPicker: 'default',
-          grapickOpts: {
-            min: 1,
-            max: 99,
-          }
-        }
+        'gjs-editor-presets': { flexGrid: true },
+        // 'grapesjs-style-gradient': {
+        //   colorPicker: 'default',
+        //   grapickOpts: {
+        //     min: 1,
+        //     max: 99,
+        //   }
+        // }
+      },
+      pageManager: true,
+      storageManager: {
+        type: 'indexeddb',
+        autosave: false,
+        autoload: false,
       },
       height: '100%',
       fromElement: true,
-      storageManager: { autoload: 0 },
       layerManager: {
         injectTo: '#kits-drawer'
       },
@@ -416,6 +428,24 @@
           attributes: { title: 'Configurations' },
         },
       ]
+    });
+    // Running commands from panels
+    editor.Panels.addButton('options', {
+      id: 'open-templates',
+      className: 'fa fa-folder-o',
+      attributes: {
+        title: 'Open projects and templates'
+      },
+      command: 'open-templates', //Open modal 
+    });
+    editor.Panels.addButton('views', {
+      id: 'open-pages',
+      className: 'fa fa-file-o',
+      attributes: {
+        title: 'Take Screenshot'
+      },
+      command: 'open-pages',
+      togglable: false
     });
   </script>
 </body>
