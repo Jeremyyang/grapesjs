@@ -6,7 +6,6 @@
   <title>GrapesJS</title>
   <!-- https://fontawesome.com/v4/icons/ -->
   <link rel="stylesheet" href="dist/css/grapes.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/grapesjs-project-manager/dist/grapesjs-project-manager.min.css">
   <script src="grapes.min.js"></script>
   <style>
     body,
@@ -31,17 +30,8 @@
 
     header {
       display: flex;
-      justify-content: space-around;
       height: 40px;
       background-color: #444;
-    }
-
-    header a.fa-home {
-      color: white;
-      width: 100%;
-      display: block;
-      text-align: center;
-      text-decoration: none;
     }
 
     header .gjs-pn-panel {
@@ -56,7 +46,38 @@
       position: relative;
       width: 50px;
       height: 100%;
+      padding-top: 10px;
       background-color: #444;
+    }
+
+    header .brand-icon {
+      width: 50px;
+    }
+
+    header .common-tools {
+      flex-grow: 1;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    header .advance-tools {
+      display: flex;
+      width: calc((100vw - 50px) * 0.15);
+    }
+
+    header .page-title {
+      display: flex;
+      align-items: center;
+    }
+
+    header .page-title input {
+      height: 24px;
+      width: 200px;
+      background-color: #5a584f;
+      outline: none;
+      border: 1px solid #746d6d;
+      color: white;
+      padding-left: 5px;
     }
 
     .left-bar .gjs-pn-panel {
@@ -140,9 +161,10 @@
       width: 150%;
       display: flex;
     }
-    .gjs-mdl-container[data-custom-modal] .gjs-cm-editor-c{
+
+    .gjs-mdl-container[data-custom-modal] .gjs-cm-editor-c {
       float: none;
-    width: 33.3%;
+      width: 33.3%;
     }
   </style>
 </head>
@@ -150,25 +172,32 @@
 <body>
   <div class="container">
     <header>
-      <div style="width: 30px;"><a aria-hidden="true" href="#">
-          <svg width="100%" height="100%" viewBox="0 0 125 120" version="1.1" xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink">
-            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-              <g id="编组">
-                <path
-                  d="M60,0.5 C78.3306495,0.5 101.058233,8.76826427 114.077332,21.7873633 C119.504117,27.2141485 123.241792,33.4679276 124.2283,40.2995049 C125.107416,46.3873958 123.795086,52.9268964 119.574995,59.7366175 C115.363588,66.5323254 111.74893,73.0643627 108.37832,79.1557177 C101.056671,92.3873797 94.9037003,103.537474 86.2346958,110.747857 C79.5546085,116.303972 71.3740659,119.5 60,119.5 C43.5695287,119.5 28.6945287,112.840236 17.9271465,102.072853 C7.15976435,91.3054713 0.5,76.4304713 0.5,60 C0.5,43.5695287 7.15976435,28.6945287 17.9271465,17.9271465 C28.6945287,7.15976435 43.5695287,0.5 60,0.5 Z"
-                  id="椭圆形" stroke="#FFAB00" fill="#FF8950"></path>
-                <rect fill="#0071FF" x="55" y="0" width="10" height="120" rx="5"></rect>
-                <rect fill="#00C500" x="0" y="55" width="119" height="10" rx="5"></rect>
-                <rect fill="#FF0027" x="55" y="55" width="10" height="10"></rect>
-              </g>
+      <div class="brand-icon">
+        <svg width="100%" height="100%" viewBox="0 0 125 120" version="1.1" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g>
+              <path
+                d="M60,0.5 C78.3306495,0.5 101.058233,8.76826427 114.077332,21.7873633 C119.504117,27.2141485 123.241792,33.4679276 124.2283,40.2995049 C125.107416,46.3873958 123.795086,52.9268964 119.574995,59.7366175 C115.363588,66.5323254 111.74893,73.0643627 108.37832,79.1557177 C101.056671,92.3873797 94.9037003,103.537474 86.2346958,110.747857 C79.5546085,116.303972 71.3740659,119.5 60,119.5 C43.5695287,119.5 28.6945287,112.840236 17.9271465,102.072853 C7.15976435,91.3054713 0.5,76.4304713 0.5,60 C0.5,43.5695287 7.15976435,28.6945287 17.9271465,17.9271465 C28.6945287,7.15976435 43.5695287,0.5 60,0.5 Z"
+                stroke="#FFAB00" fill="#FF8950"></path>
+              <rect fill="#0071FF" x="55" y="0" width="10" height="120" rx="5"></rect>
+              <rect fill="#00C500" x="0" y="55" width="119" height="10" rx="5"></rect>
+              <rect fill="#FF0027" x="55" y="55" width="10" height="10"></rect>
             </g>
-          </svg>
-        </a>
+          </g>
+        </svg>
       </div>
-      <div class="device-btns"></div>
-      <div class="view-btns"></div>
-      <div class="paint-btns"></div>
+      <div class="common-tools">
+        <div class="page-title">
+          <input type="text" value="untitled" />
+        </div>
+        <div class="device-btns"></div>
+        <div class="view-btns"></div>
+      </div>
+      <div class="advance-tools">
+        <div class="paint-btns"></div>
+        <div class="page-config"></div>
+      </div>
     </header>
     <div class="main">
       <aside id="left-bar" class="left-bar">
@@ -264,7 +293,8 @@
   <script src="./plugins/grapesjs-editor-components/dist/index.js"></script>
   <!-- <script src="https://unpkg.com/grapesjs-lory-slider"></script> bug -->
   <!-- git@github.com:kaoz70/grapesjs-swiper-slider.git -->
-  <script src="https://unpkg.com/grapesjs-project-manager"></script>
+  <!-- <link rel="stylesheet" href="https://unpkg.com/grapesjs-project-manager/dist/grapesjs-project-manager.min.css"> -->
+  <!-- <script src="https://unpkg.com/grapesjs-project-manager"></script> -->
   <script type="text/javascript">
     var editor = grapesjs.init({
       dragMode: 'translate', // 'absolute' | 'translate'
@@ -283,7 +313,7 @@
         // 'grapesjs-lory-slider',  // 有 bug 无法加载
         // 'grapesjs-echarts',
         // 'grapesjs-preset-webpage',
-        'grapesjs-project-manager',
+        // 'grapesjs-project-manager',
       ],
       pluginsOpts: {
         'gjs-editor-presets': { flexGrid: true },
@@ -363,9 +393,7 @@
         {
           id: 'open-blocks',
           className: 'plus-btn',
-          label: `<svg style="display: block; max-width:22px" viewBox="0 0 24 24">
-            <path fill="currentColor" d="M17,13H13V17H11V13H7V11H11V7H13V11H17M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3Z"></path>
-          </svg>`,
+          label: `<svg style="display: block; max-width:22px" viewBox="0 0 24 24"><path fill="currentColor" d="M17,13H13V17H11V13H7V11H11V7H13V11H17M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,05,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3Z"></path></svg>`,
           command: 'open-blocks',
           togglable: true,
           attributes: { title: 'Open Blocks' },
@@ -384,8 +412,7 @@
           id: 'open-shopify-blocks',
           className: 'shopify-icon',
           command: 'open-shopify-blocks',
-          label: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160"><path fill="#95BF47" d="M130.7 32.9c-.1-.9-.9-1.3-1.5-1.4-.6-.1-12.6-.2-12.6-.2s-10.1-9.8-11.1-10.8-2.9-.7-3.7-.5c0 0-1.9.6-5.1 1.6-.5-1.7-1.3-3.8-2.4-5.9-3.6-6.9-8.8-10.5-15.2-10.5-.4 0-.9 0-1.3.1-.2-.2-.4-.4-.6-.7-2.8-3-6.3-4.4-10.5-4.3-8.2.2-16.3 6.1-23 16.7-4.7 7.4-8.2 16.7-9.2 23.9-9.4 2.9-16 4.9-16.1 5-4.7 1.5-4.9 1.6-5.5 6.1C12.4 55.3 0 151.4 0 151.4l104.1 18 45.1-11.2S130.8 33.7 130.7 32.9zm-39.2-9.7c-2.4.7-5.1 1.6-8.1 2.5-.1-4.1-.6-9.9-2.5-14.9 6.3 1.2 9.3 8.2 10.6 12.4zM78 27.4c-5.5 1.7-11.4 3.5-17.4 5.4 1.7-6.4 4.9-12.8 8.8-17 1.5-1.6 3.5-3.3 5.9-4.3 2.3 4.7 2.7 11.4 2.7 15.9zM66.8 5.8c1.9 0 3.5.4 4.9 1.3-2.2 1.1-4.4 2.8-6.4 5-5.2 5.6-9.2 14.2-10.8 22.6-5 1.5-9.8 3-14.3 4.4"></path><path fill="#FFF" d="M79.1 54.7l-5.2 19.6s-5.8-2.7-12.8-2.2c-10.2.6-10.3 7-10.2 8.7.6 8.8 23.6 10.7 24.9 31.2 1 16.2-8.6 27.2-22.4 28.1-16.6 1-25.7-8.7-25.7-8.7l3.5-14.9s9.2 6.9 16.5 6.5c4.8-.3 6.5-4.2 6.3-7-.7-11.4-19.5-10.8-20.7-29.5-1-15.8 9.4-31.8 32.3-33.3 9-.8 13.5 1.5 13.5 1.5"></path>
-            </svg>`,
+          label: `<svg style="display: block; max-width:22px" viewBox="0 0 24 24" fill="currentColor"><path d="M19.9 4.7C19.9 4.6 19.8 4.5 19.7 4.5C19.6 4.5 17.8 4.4 17.8 4.4C17.8 4.4 16.5 3.1 16.4 3C16.3 2.9 16 2.9 15.9 2.9C15.9 2.9 15.6 3 15.2 3.1C14.8 1.9 14 0.7 12.7 0.7H12.6C12.1 0.2 11.7 0 11.3 0C8.2 0 6.7 3.9 6.3 5.8C5 6.2 4.2 6.5 4.1 6.5C3.4 6.7 3.4 6.7 3.3 7.4C3.2 7.9 1.4 21.4 1.4 21.4L15.1 24L22.5 22.4C22.6 22.4 19.9 4.8 19.9 4.7ZM12.4 3.8V3.9C11.6 4.1 10.8 4.4 10 4.6C10.5 2.8 11.3 2 12.1 1.6C12.3 2.2 12.4 2.9 12.4 3.8ZM11.2 0.8C11.3 0.8 11.5 0.8 11.6 0.9C10.6 1.4 9.5 2.5 9.1 4.9C8.4 5.2 7.8 5.4 7.2 5.5C7.7 3.7 8.9 0.8 11.2 0.8ZM11.7 11.3C11.7 11.3 10.9 10.9 9.9 10.9C8.5 10.9 8.4 11.8 8.4 12C8.4 13.2 11.6 13.7 11.6 16.6C11.6 18.9 10.1 20.4 8.2 20.4C5.9 20.4 4.6 18.9 4.6 18.9L5.2 16.8C5.2 16.8 6.4 17.9 7.5 17.9C8.2 17.9 8.5 17.4 8.5 17C8.5 15.4 5.8 15.3 5.8 12.6C5.8 10.4 7.4 8.2 10.7 8.2C12 8.2 12.6 8.6 12.6 8.6L11.7 11.3ZM13.2 3.7C13.2 3.6 13.2 3.5 13.2 3.5C13.2 2.7 13.1 2.1 12.9 1.6C13.6 1.7 14 2.5 14.3 3.4C14 3.4 13.6 3.5 13.2 3.7Z"></path></svg>`,
           togglable: true,
           attributes: { title: 'Open Shopify Blocks' },
         },
@@ -420,6 +447,7 @@
           label: `<svg style="display: block; max-width:22px" viewBox="0 0 24 24">
               <path fill="currentColor" d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
           </svg>`,
+          attributes: { title: 'Import code' },
         },
         {
           id: 'open-config',
@@ -429,23 +457,16 @@
         },
       ]
     });
-    // Running commands from panels
-    editor.Panels.addButton('options', {
-      id: 'open-templates',
-      className: 'fa fa-folder-o',
-      attributes: {
-        title: 'Open projects and templates'
-      },
-      command: 'open-templates', //Open modal 
-    });
-    editor.Panels.addButton('views', {
-      id: 'open-pages',
-      className: 'fa fa-file-o',
-      attributes: {
-        title: 'Take Screenshot'
-      },
-      command: 'open-pages',
-      togglable: false
+    editor.Panels.addPanel({
+      id: 'page-config',
+      el: '.page-config',
+      buttons: [
+        {
+          id: 'open-page-config',
+          className: 'fa fa-flag',
+          command: 'open-page-config',
+          attributes: { title: 'Page configuration' },
+        }]
     });
   </script>
 </body>
