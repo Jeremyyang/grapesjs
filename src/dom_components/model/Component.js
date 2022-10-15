@@ -123,7 +123,7 @@ export default class Component extends StyleableModel {
       style: '',
       styles: '', // Component related styles
       classes: '', // Array of classes
-      script: '',
+      script: '', //https://grapesjs.com/docs/modules/Components-js.html#basic-scripts
       'script-props': '',
       'script-export': '',
       attributes: '',
@@ -1680,6 +1680,10 @@ export default class Component extends StyleableModel {
       }
 
       var config = this.em.getConfig();
+      // 2个用途：
+      // 1. 初始化时，用正则对 scr 字符串脚本，进行值替换，获得组件的运行时代码（尔时通过 updateScript做一次执行）
+      // 2. 导出代码时，会执行到此方法，获得组件的转码
+      // 而，用途1会造成一个天大的误会，因 updateScript执行，会让我们看到画布上的Dom视图和转码的Dom视图不一致！！！
       var tagVarStart = escapeRegExp(config.tagVarStart || '{[ ');
       var tagVarEnd = escapeRegExp(config.tagVarEnd || ' ]}');
       var reg = new RegExp(`${tagVarStart}([\\w\\d-]*)${tagVarEnd}`, 'g');

@@ -420,6 +420,7 @@ export default class ComponentManager extends ItemManagerModule {
     const { em } = this;
     const { model = {}, view = {}, isComponent, extend, extendView, extendFn = [], extendFnView = [] } = methods;
     const compType = this.getType(type);
+    // extendType 是什么type？
     const extendType = this.getType(extend);
     const extendViewType = this.getType(extendView);
     const typeToExtend = extendType ? extendType : compType ? compType : this.getType('default');

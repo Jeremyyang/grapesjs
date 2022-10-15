@@ -142,6 +142,7 @@ export default () => {
       let { view } = this;
       const config = this.getConfig();
       const el = view && view.el;
+      console.log('traits config', config);
       view = new TraitsView(
         {
           el,
