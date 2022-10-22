@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>GrapesJS</title>
+  <title>PagePai</title>
   <!-- https://fontawesome.com/v4/icons/ -->
   <!-- https://grapedrop.com/login#/ -->
   <link rel="stylesheet" href="dist/css/grapes.min.css">
@@ -153,11 +153,6 @@
       white-space: nowrap;
     }
 
-    #kits-drawer .gjs-block__media {
-      margin-bottom: 0;
-      padding: 10px 10px 5px;
-    }
-
     .gjs-mdl-container[data-custom-modal] #gjs-mdl-c {
       overflow-x: scroll;
     }
@@ -165,11 +160,6 @@
     .gjs-mdl-container[data-custom-modal] .gjs-export-dl {
       width: 150%;
       display: flex;
-    }
-
-    .gjs-mdl-container[data-custom-modal] .gjs-cm-editor-c {
-      float: none;
-      width: 33.3%;
     }
   </style>
 </head>
@@ -357,7 +347,6 @@
       </main>
     </div>
   </div>
-  <!-- <script src="https://unpkg.com/grapesjs-style-gradient"></script> -->
   <!-- <script src="https://unpkg.com/grapesjs-tabs"></script> -->
   <script src="https://unpkg.com/grapesjs-plugin-forms"></script>
   <!-- <script src="https://unpkg.com/grapesjs-custom-code"></script> -->
@@ -403,8 +392,8 @@
       pageManager: true,
       storageManager: {
         type: 'indexeddb',
-        autosave: false,
-        autoload: false,
+        autosave: true,
+        autoload: true,
       },
       height: '100%',
       fromElement: true,
@@ -454,6 +443,7 @@
       });
     });
     // 此插件有 bug
+    // https://github.com/artf/grapick
     // editor.StyleManager.addProperty('box_decorations', {
     //   name: 'Gradient',
     //   property: 'background-image',
@@ -543,6 +533,24 @@
           attributes: { title: 'Page configuration' },
         }]
     });
+  </script>
+  <script type="text/javascript">
+
+      const params = location.search.replace('?', '').split('&').filter(param => param.includes('page='));
+      if(params.length === 1) {
+        const page = params[0].replace('page=', '');
+        if(page){
+          fetch(`./demo-pages/${page}.json`).then(res => {
+            res.text().then(json => {
+              const project = JSON.parse(json);
+              editor.loadProjectData(project);
+            });
+          })
+        }
+        // todo tips
+      } else {
+        // todo tips
+      }
   </script>
 </body>
 

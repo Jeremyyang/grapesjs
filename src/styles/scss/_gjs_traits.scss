@@ -10,8 +10,9 @@
   &label {
 
     &-wrp {
-      width: 30%;
-      min-width: 30%;
+      min-width: 60%;
+      flex-grow: 1;
+      margin-right: 5px;
     }
   }
 

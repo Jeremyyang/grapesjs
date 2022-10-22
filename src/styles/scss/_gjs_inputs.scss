@@ -217,6 +217,11 @@
   }
 }
 
+.#{$app-prefix}field-wrp--checkbox{
+  flex-grow: 0;
+  flex-shrink: 1;
+}
+
 .#{$app-prefix}radio-item {
   flex: 1 1 auto;
   text-align: center;

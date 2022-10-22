@@ -396,9 +396,8 @@ $colorsAll: (one, $primaryColor),
 /********* Code Manager **********/
 
 .#{$cm-prefix}editor-c{
-	float:left;
 	box-sizing: border-box;
-	width:50%;
+	width: 33.3%;
 
 	.CodeMirror{
 		 height: 450px;

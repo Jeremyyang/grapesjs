@@ -362,6 +362,8 @@
   .#{$sm-prefix}label-wrp {
     display: flex;
     align-items: center;
+    flex-grow: 1;
+    margin-right: 5px
   }
 
   ##{$sm-prefix}move {
