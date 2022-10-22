@@ -39,7 +39,7 @@ describe('GrapesJS', () => {
         },
       };
       obj = grapesjs;
-      document.body.innerHTML = `<div id="fixtures"><div id="${editorName}"></div></div>`;
+      document.body.innerHTML = `<div id="fixtures"><div class="device-btns"></div><div class="view-btns"></div><div class="paint-btns"></div><div id="${editorName}"></div></div>`;
       fixtures = document.body.querySelector('#fixtures');
       fixture = document.body.querySelector(`#${editorName}`);
     });
