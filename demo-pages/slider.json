@@ -16,17 +16,6 @@
     {
       "selectors": [
         {
-          "name": "swiper-wrapper",
-          "private": false
-        }
-      ],
-      "style": {
-        "height": "100vh"
-      }
-    },
-    {
-      "selectors": [
-        {
           "name": "s1",
           "private": false
         }
@@ -43,7 +32,9 @@
         }
       ],
       "style": {
-        "background-color": "#6fec68"
+        "background-color": "#6fec68",
+        "display": "flex",
+        "justify-content": "center"
       }
     },
     {
@@ -54,7 +45,9 @@
         }
       ],
       "style": {
-        "background-color": "#9083f7"
+        "background-color": "#9083f7",
+        "display": "flex",
+        "justify-content": "center"
       }
     },
     {
@@ -73,6 +66,7 @@
       "selectors": [
         {
           "name": "countdown-block",
+          "active": false,
           "private": false
         }
       ],
@@ -92,18 +86,6 @@
     {
       "selectors": [
         {
-          "name": "countdown-digit",
-          "private": false
-        }
-      ],
-      "style": {
-        "font-size": "5rem"
-      },
-      "group": "cmp:countdown"
-    },
-    {
-      "selectors": [
-        {
           "name": "countdown-endtext",
           "private": false
         }
@@ -117,6 +99,7 @@
       "selectors": [
         {
           "name": "countdown-cont",
+          "active": false,
           "private": false
         }
       ],
@@ -129,6 +112,7 @@
       "selectors": [
         {
           "name": "gjs-row",
+          "active": false,
           "private": false
         }
       ],
@@ -137,8 +121,7 @@
         "padding-top": "10px",
         "padding-right": "10px",
         "padding-bottom": "10px",
-        "padding-left": "10px",
-        "width": "100%"
+        "padding-left": "10px"
       }
     },
     {
@@ -199,7 +182,20 @@
     {
       "selectors": [
         {
-          "name": "irtyb",
+          "name": "isso5",
+          "type": 2,
+          "private": false
+        }
+      ],
+      "style": {
+        "width": "100%",
+        "height": "100%"
+      }
+    },
+    {
+      "selectors": [
+        {
+          "name": "i2mph",
           "type": 2,
           "private": false
         }
@@ -211,14 +207,199 @@
     {
       "selectors": [
         {
-          "name": "ib3rj",
+          "name": "idj3y",
           "type": 2,
           "private": false
         }
       ],
       "style": {
-        "height": "350px",
-        "width": "615px"
+        "min-height": "150px;"
+      }
+    },
+    {
+      "selectors": [
+        {
+          "name": "slider-topbar",
+          "private": false
+        }
+      ],
+      "style": {
+        "height": "120px"
+      }
+    },
+    {
+      "selectors": [
+        {
+          "name": "countdown-label",
+          "private": false
+        }
+      ],
+      "style": {
+        "font-size": "12px",
+        "margin": "0 0 0 2px"
+      }
+    },
+    {
+      "selectors": [
+        {
+          "name": "igqaj",
+          "type": 2,
+          "private": false
+        }
+      ],
+      "style": {
+        "font-family": "Helvetica",
+        "background": "#28BE44",
+        "color": "#FFFFFF",
+        "border-color": "#28BE44"
+      }
+    },
+    {
+      "selectors": [
+        {
+          "name": "i72rc",
+          "type": 2,
+          "private": false
+        }
+      ],
+      "style": {
+        "color": "rgb(232, 234, 237)",
+        "font-family": "menlo, monospace",
+        "font-size": "11px",
+        "white-space": "pre-wrap",
+        "background-color": "rgb(32, 33, 36)"
+      }
+    },
+    {
+      "selectors": [
+        {
+          "name": "video-box",
+          "private": false
+        }
+      ],
+      "style": {
+        "position": "relative"
+      }
+    },
+    {
+      "selectors": [
+        {
+          "name": "video-cover",
+          "private": false
+        }
+      ],
+      "style": {
+        "position": "absolute",
+        "width": "100%",
+        "height": "100%",
+        "background-color": "rgba(37,7,7,0.78)",
+        "top": "0"
+      }
+    },
+    {
+      "selectors": [
+        {
+          "name": "s-middle",
+          "private": false
+        }
+      ],
+      "style": {
+        "height": "300px"
+      }
+    },
+    {
+      "selectors": [
+        {
+          "name": "igcn",
+          "type": 2,
+          "private": false
+        }
+      ],
+      "style": {
+        "display": "flex",
+        "justify-content": "center",
+        "font-size": "1rem"
+      }
+    },
+    {
+      "selectors": [
+        {
+          "name": "izeo",
+          "type": 2,
+          "private": false
+        }
+      ],
+      "style": {
+        "display": "flex",
+        "align-items": "center"
+      }
+    },
+    {
+      "selectors": [
+        {
+          "name": "i355",
+          "type": 2,
+          "private": false
+        }
+      ],
+      "style": {
+        "font-size": "1rem"
+      }
+    },
+    {
+      "selectors": [
+        {
+          "name": "ielro",
+          "type": 2,
+          "private": false
+        }
+      ],
+      "style": {
+        "display": "flex",
+        "justify-content": "center",
+        "align-items": "center"
+      }
+    },
+    {
+      "selectors": [
+        {
+          "name": "is8gb",
+          "type": 2,
+          "private": false
+        }
+      ],
+      "style": {
+        "display": "flex",
+        "justify-content": "center",
+        "align-items": "center"
+      }
+    },
+    {
+      "selectors": [
+        {
+          "name": "ijzk1",
+          "type": 2,
+          "private": false
+        }
+      ],
+      "style": {
+        "display": "flex",
+        "justify-content": "center",
+        "align-items": "center"
+      }
+    },
+    {
+      "selectors": [
+        {
+          "name": "i6sjy",
+          "type": 2,
+          "private": false
+        }
+      ],
+      "style": {
+        "font-size": "3rem",
+        "font-weight": "600",
+        "color": "#e12020"
       }
     }
   ],
@@ -245,6 +426,12 @@
               {
                 "type": "swiper-container",
                 "style": "",
+                "classes": [
+                  {
+                    "name": "swiper-container",
+                    "private": false
+                  }
+                ],
                 "attributes": {
                   "id": "i5p3"
                 },
@@ -255,9 +442,17 @@
                     "classes": [
                       {
                         "name": "swiper-wrapper",
+                        "active": false,
+                        "private": false
+                      },
+                      {
+                        "name": "slider-topbar",
                         "private": false
                       }
                     ],
+                    "attributes": {
+                      "id": "ir4e"
+                    },
                     "components": [
                       {
                         "type": "Slide",
@@ -280,6 +475,9 @@
                           {
                             "tagName": "p",
                             "type": "text",
+                            "attributes": {
+                              "id": "in0e"
+                            },
                             "_undoexc": ["status", "open"],
                             "components": [
                               {
@@ -300,18 +498,20 @@
                             "attributes": {
                               "id": "ilohk"
                             },
-                            "startfrom": "2022-10-18",
+                            "startfrom": "2022-10-25",
                             "components": [
                               {
                                 "tagName": "span",
                                 "classes": [
                                   {
                                     "name": "countdown-cont",
+                                    "active": false,
                                     "private": false
                                   }
                                 ],
                                 "attributes": {
-                                  "data-js": "countdown"
+                                  "data-js": "countdown",
+                                  "id": "igcn"
                                 },
                                 "_undoexc": ["status", "open"],
                                 "components": [
@@ -319,20 +519,26 @@
                                     "classes": [
                                       {
                                         "name": "countdown-block",
+                                        "active": false,
                                         "private": false
                                       }
                                     ],
+                                    "attributes": {
+                                      "id": "izeo"
+                                    },
                                     "_undoexc": ["status", "open"],
                                     "components": [
                                       {
                                         "classes": [
                                           {
                                             "name": "countdown-digit",
+                                            "active": false,
                                             "private": false
                                           }
                                         ],
                                         "attributes": {
-                                          "data-js": "countdown-day"
+                                          "data-js": "countdown-day",
+                                          "id": "i355"
                                         },
                                         "_undoexc": ["status", "open"]
                                       },
@@ -359,20 +565,26 @@
                                     "classes": [
                                       {
                                         "name": "countdown-block",
+                                        "active": false,
                                         "private": false
                                       }
                                     ],
+                                    "attributes": {
+                                      "id": "ielro"
+                                    },
                                     "_undoexc": ["status", "open"],
                                     "components": [
                                       {
                                         "classes": [
                                           {
                                             "name": "countdown-digit",
+                                            "active": false,
                                             "private": false
                                           }
                                         ],
                                         "attributes": {
-                                          "data-js": "countdown-hour"
+                                          "data-js": "countdown-hour",
+                                          "id": "ipaga"
                                         },
                                         "_undoexc": ["status", "open"]
                                       },
@@ -399,20 +611,26 @@
                                     "classes": [
                                       {
                                         "name": "countdown-block",
+                                        "active": false,
                                         "private": false
                                       }
                                     ],
+                                    "attributes": {
+                                      "id": "is8gb"
+                                    },
                                     "_undoexc": ["status", "open"],
                                     "components": [
                                       {
                                         "classes": [
                                           {
                                             "name": "countdown-digit",
+                                            "active": false,
                                             "private": false
                                           }
                                         ],
                                         "attributes": {
-                                          "data-js": "countdown-minute"
+                                          "data-js": "countdown-minute",
+                                          "id": "ironu"
                                         },
                                         "_undoexc": ["status", "open"]
                                       },
@@ -439,15 +657,20 @@
                                     "classes": [
                                       {
                                         "name": "countdown-block",
+                                        "active": false,
                                         "private": false
                                       }
                                     ],
+                                    "attributes": {
+                                      "id": "ijzk1"
+                                    },
                                     "_undoexc": ["status", "open"],
                                     "components": [
                                       {
                                         "classes": [
                                           {
                                             "name": "countdown-digit",
+                                            "active": false,
                                             "private": false
                                           }
                                         ],
@@ -522,6 +745,443 @@
                             "components": [
                               {
                                 "type": "textnode",
+                                "content": "Spooky savings! Up to ",
+                                "_undoexc": ["status", "open"]
+                              },
+                              {
+                                "tagName": "b",
+                                "type": "text",
+                                "_undoexc": ["status", "open"],
+                                "components": [
+                                  {
+                                    "type": "textnode",
+                                    "content": "41% OFF",
+                                    "_undoexc": ["status", "open"]
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "textnode",
+                                "content": " on all products and Freebies!  ",
+                                "_undoexc": ["status", "open"]
+                              },
+                              {
+                                "tagName": "span",
+                                "classes": [
+                                  {
+                                    "name": "aph_bar_btn_holder",
+                                    "private": false
+                                  }
+                                ],
+                                "_undoexc": ["status", "open"],
+                                "components": [
+                                  {
+                                    "type": "link",
+                                    "classes": [
+                                      {
+                                        "name": "aph_bar_btn_new",
+                                        "private": false
+                                      },
+                                      {
+                                        "name": "aph_rounded-solid-btn",
+                                        "private": false
+                                      }
+                                    ],
+                                    "attributes": {
+                                      "href": "https://www.xtool.com/pages/xtoolhalloween",
+                                      "id": "igqaj"
+                                    },
+                                    "_undoexc": ["status", "open"],
+                                    "components": [
+                                      {
+                                        "type": "textnode",
+                                        "content": "OPEN IF YOU DARE 😈",
+                                        "_undoexc": ["status", "open"]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Slide",
+                        "classes": [
+                          {
+                            "name": "swiper-slide",
+                            "active": false,
+                            "private": false
+                          },
+                          {
+                            "name": "s3",
+                            "private": false
+                          }
+                        ],
+                        "_undoexc": ["status", "open"],
+                        "components": [
+                          {
+                            "tagName": "p",
+                            "type": "text",
+                            "attributes": {
+                              "id": "i9dx7"
+                            },
+                            "_undoexc": ["status", "open"],
+                            "components": [
+                              {
+                                "tagName": "span",
+                                "type": "text",
+                                "attributes": {
+                                  "id": "i72rc"
+                                },
+                                "_undoexc": ["status", "open"],
+                                "components": [
+                                  {
+                                    "type": "textnode",
+                                    "content": "🚚 Free Shipping of Machines for the US & CA & AU",
+                                    "_undoexc": ["status", "open"]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "swiper-prev",
+                    "classes": [
+                      {
+                        "name": "swiper-button-prev",
+                        "private": false
+                      }
+                    ]
+                  },
+                  {
+                    "type": "swiper-next",
+                    "classes": [
+                      {
+                        "name": "swiper-button-next",
+                        "private": false
+                      }
+                    ]
+                  },
+                  {
+                    "type": "swiper-pagination",
+                    "classes": [
+                      {
+                        "name": "swiper-pagination",
+                        "private": false
+                      }
+                    ]
+                  },
+                  {
+                    "type": "swiper-scrollbar",
+                    "classes": [
+                      {
+                        "name": "swiper-scrollbar",
+                        "private": false
+                      }
+                    ]
+                  }
+                ],
+                "scriptUpdated": 1,
+                "custom-name": "Sliders-topbar"
+              },
+              {
+                "type": "swiper-container",
+                "style": "",
+                "classes": [
+                  {
+                    "name": "swiper-container",
+                    "private": false
+                  }
+                ],
+                "attributes": {
+                  "id": "idj3y"
+                },
+                "components": [
+                  {
+                    "type": "swiper-wrapper",
+                    "classes": [
+                      {
+                        "name": "swiper-wrapper",
+                        "active": false,
+                        "private": false
+                      },
+                      {
+                        "name": "s-middle",
+                        "private": false
+                      }
+                    ],
+                    "attributes": {
+                      "id": "i4c8j"
+                    },
+                    "components": [
+                      {
+                        "type": "Slide",
+                        "classes": [
+                          {
+                            "name": "swiper-slide",
+                            "active": false,
+                            "private": false
+                          }
+                        ],
+                        "attributes": {
+                          "id": "ibfh8"
+                        },
+                        "_undoexc": ["status", "open"],
+                        "components": [
+                          {
+                            "tagName": "p",
+                            "type": "text",
+                            "_undoexc": ["status", "open"],
+                            "components": [
+                              {
+                                "type": "textnode",
+                                "content": "Slide 1",
+                                "_undoexc": ["status", "open"]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "countdown",
+                            "classes": [
+                              {
+                                "name": "countdown",
+                                "private": false
+                              }
+                            ],
+                            "attributes": {
+                              "id": "ija47"
+                            },
+                            "startfrom": "2022-10-27",
+                            "components": [
+                              {
+                                "tagName": "span",
+                                "classes": [
+                                  {
+                                    "name": "countdown-cont",
+                                    "active": false,
+                                    "private": false
+                                  }
+                                ],
+                                "attributes": {
+                                  "data-js": "countdown",
+                                  "id": "i6sjy"
+                                },
+                                "_undoexc": ["status", "open"],
+                                "components": [
+                                  {
+                                    "classes": [
+                                      {
+                                        "name": "countdown-block",
+                                        "active": false,
+                                        "private": false
+                                      }
+                                    ],
+                                    "_undoexc": ["status", "open"],
+                                    "components": [
+                                      {
+                                        "classes": [
+                                          {
+                                            "name": "countdown-digit",
+                                            "active": false,
+                                            "private": false
+                                          }
+                                        ],
+                                        "attributes": {
+                                          "data-js": "countdown-day"
+                                        },
+                                        "_undoexc": ["status", "open"]
+                                      },
+                                      {
+                                        "type": "text",
+                                        "classes": [
+                                          {
+                                            "name": "countdown-label",
+                                            "private": false
+                                          }
+                                        ],
+                                        "_undoexc": ["status", "open"],
+                                        "components": [
+                                          {
+                                            "type": "textnode",
+                                            "content": "days",
+                                            "_undoexc": ["status", "open"]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "classes": [
+                                      {
+                                        "name": "countdown-block",
+                                        "active": false,
+                                        "private": false
+                                      }
+                                    ],
+                                    "_undoexc": ["status", "open"],
+                                    "components": [
+                                      {
+                                        "classes": [
+                                          {
+                                            "name": "countdown-digit",
+                                            "active": false,
+                                            "private": false
+                                          }
+                                        ],
+                                        "attributes": {
+                                          "data-js": "countdown-hour"
+                                        },
+                                        "_undoexc": ["status", "open"]
+                                      },
+                                      {
+                                        "type": "text",
+                                        "classes": [
+                                          {
+                                            "name": "countdown-label",
+                                            "private": false
+                                          }
+                                        ],
+                                        "_undoexc": ["status", "open"],
+                                        "components": [
+                                          {
+                                            "type": "textnode",
+                                            "content": "hours",
+                                            "_undoexc": ["status", "open"]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "classes": [
+                                      {
+                                        "name": "countdown-block",
+                                        "active": false,
+                                        "private": false
+                                      }
+                                    ],
+                                    "_undoexc": ["status", "open"],
+                                    "components": [
+                                      {
+                                        "classes": [
+                                          {
+                                            "name": "countdown-digit",
+                                            "active": false,
+                                            "private": false
+                                          }
+                                        ],
+                                        "attributes": {
+                                          "data-js": "countdown-minute"
+                                        },
+                                        "_undoexc": ["status", "open"]
+                                      },
+                                      {
+                                        "type": "text",
+                                        "classes": [
+                                          {
+                                            "name": "countdown-label",
+                                            "private": false
+                                          }
+                                        ],
+                                        "_undoexc": ["status", "open"],
+                                        "components": [
+                                          {
+                                            "type": "textnode",
+                                            "content": "minutes",
+                                            "_undoexc": ["status", "open"]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "classes": [
+                                      {
+                                        "name": "countdown-block",
+                                        "active": false,
+                                        "private": false
+                                      }
+                                    ],
+                                    "_undoexc": ["status", "open"],
+                                    "components": [
+                                      {
+                                        "classes": [
+                                          {
+                                            "name": "countdown-digit",
+                                            "active": false,
+                                            "private": false
+                                          }
+                                        ],
+                                        "attributes": {
+                                          "data-js": "countdown-second"
+                                        },
+                                        "_undoexc": ["status", "open"]
+                                      },
+                                      {
+                                        "type": "text",
+                                        "classes": [
+                                          {
+                                            "name": "countdown-label",
+                                            "private": false
+                                          }
+                                        ],
+                                        "_undoexc": ["status", "open"],
+                                        "components": [
+                                          {
+                                            "type": "textnode",
+                                            "content": "seconds",
+                                            "_undoexc": ["status", "open"]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tagName": "span",
+                                "classes": [
+                                  {
+                                    "name": "countdown-endtext",
+                                    "private": false
+                                  }
+                                ],
+                                "attributes": {
+                                  "data-js": "countdown-endtext"
+                                },
+                                "_undoexc": ["status", "open"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Slide",
+                        "classes": [
+                          {
+                            "name": "swiper-slide",
+                            "active": false,
+                            "private": false
+                          }
+                        ],
+                        "attributes": {
+                          "id": "ifnwi"
+                        },
+                        "_undoexc": ["status", "open"],
+                        "components": [
+                          {
+                            "tagName": "p",
+                            "type": "text",
+                            "_undoexc": ["status", "open"],
+                            "components": [
+                              {
+                                "type": "textnode",
                                 "content": "Slide 2",
                                 "_undoexc": ["status", "open"]
                               }
@@ -543,6 +1203,7 @@
                             "classes": [
                               {
                                 "name": "gjs-row",
+                                "active": false,
                                 "private": false
                               }
                             ],
@@ -570,23 +1231,7 @@
                                     "private": false
                                   }
                                 ],
-                                "_undoexc": ["status", "open"],
-                                "components": [
-                                  {
-                                    "type": "video",
-                                    "resizable": {
-                                      "ratioDefault": 1
-                                    },
-                                    "attributes": {
-                                      "allowfullscreen": "allowfullscreen",
-                                      "id": "ib3rj"
-                                    },
-                                    "_undoexc": ["status", "open"],
-                                    "src": "https://cdn.shopify.com/videos/c/vp/72d954ed28534c16b18d3dfb3eb9d5cf/72d954ed28534c16b18d3dfb3eb9d5cf.HD-1080p-2.5Mbps.mp4",
-                                    "autoplay": true,
-                                    "sources": []
-                                  }
-                                ]
+                                "_undoexc": ["status", "open"]
                               }
                             ]
                           }
@@ -599,12 +1244,11 @@
                             "name": "swiper-slide",
                             "active": false,
                             "private": false
-                          },
-                          {
-                            "name": "s3",
-                            "private": false
                           }
                         ],
+                        "attributes": {
+                          "id": "iq3wx"
+                        },
                         "_undoexc": ["status", "open"],
                         "components": [
                           {
@@ -626,7 +1270,7 @@
                             },
                             "attributes": {
                               "frameborder": 0,
-                              "id": "irtyb"
+                              "id": "i2mph"
                             },
                             "_undoexc": ["status", "open"],
                             "src": "https://maps.google.com/maps?&q=深圳&z=1&t=q&output=embed",
@@ -674,6 +1318,66 @@
                   }
                 ],
                 "scriptUpdated": 1
+              },
+              {
+                "tagName": "section",
+                "type": "Section",
+                "classes": [
+                  {
+                    "name": "video-box",
+                    "private": false
+                  }
+                ],
+                "attributes": {
+                  "id": "iudb8"
+                },
+                "_undoexc": ["status", "open"],
+                "components": [
+                  {
+                    "type": "video",
+                    "resizable": {
+                      "ratioDefault": 1
+                    },
+                    "attributes": {
+                      "allowfullscreen": "allowfullscreen",
+                      "id": "isso5"
+                    },
+                    "_undoexc": ["status", "open"],
+                    "src": "https://cdn.shopify.com/videos/c/vp/72d954ed28534c16b18d3dfb3eb9d5cf/72d954ed28534c16b18d3dfb3eb9d5cf.HD-1080p-2.5Mbps.mp4",
+                    "autoplay": true,
+                    "sources": []
+                  },
+                  {
+                    "name": "Row",
+                    "droppable": ".gjs-cell",
+                    "resizable": {
+                      "tl": 0,
+                      "tc": 0,
+                      "tr": 0,
+                      "cl": 0,
+                      "cr": 0,
+                      "bl": 0,
+                      "br": 0,
+                      "minDim": 1
+                    },
+                    "classes": [
+                      {
+                        "name": "gjs-row",
+                        "active": false,
+                        "private": false
+                      },
+                      {
+                        "name": "video-cover",
+                        "private": false
+                      }
+                    ],
+                    "attributes": {
+                      "id": "iinaq"
+                    },
+                    "_undoexc": ["status", "open"],
+                    "custom-name": "Row-cover"
+                  }
+                ]
               }
             ]
           }
