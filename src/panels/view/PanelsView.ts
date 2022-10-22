@@ -49,6 +49,9 @@ export default class PanelsView extends View<Panels> {
     if (el) {
     } else if (appendTo) {
       var appendEl = document.querySelector(appendTo);
+      // if(!appendEl){
+      //   console.error(appendTo);
+      // }
       appendEl.appendChild(rendered);
     } else {
       if (fragment) {

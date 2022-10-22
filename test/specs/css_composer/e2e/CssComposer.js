@@ -12,7 +12,7 @@ describe('E2E tests', () => {
   var rulesSet2;
 
   beforeAll(() => {
-    fixtures = $('#fixtures');
+    fixtures = $('<div id="fixtures"></div>');
     fixture = $('<div class="csscomposer-fixture"></div>');
   });
 
@@ -27,6 +27,9 @@ describe('E2E tests', () => {
     clsm = gjs.SelectorManager;
     domc = gjs.DomComponents;
     fixture.empty().appendTo(fixtures);
+    // var panelsEl = $('<div class="device-btns"></div><div class="view-btns"></div><div class="paint-btns"></div>');
+    // panelsEl.appendTo(fixtures);
+
     rulesSet = [
       { selectors: [{ name: 'test1' }, { name: 'test2' }] },
       { selectors: [{ name: 'test2' }, { name: 'test3' }] },

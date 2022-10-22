@@ -9,7 +9,9 @@ describe('E2E tests', () => {
 
   describe('Interaction with Components', () => {
     beforeEach(() => {
-      document.body.innerHTML = '<div id="fixtures"><div id="SelectorManager-fixture"></div></div>';
+      document.body.innerHTML = `<div id="fixtures">
+        <div class="device-btns"></div><div class="view-btns"></div><div class="paint-btns"></div>
+        <div id="SelectorManager-fixture"></div></div>`;
       fixtures = document.body.firstChild;
       gjs = grapesjs.init({
         stylePrefix: '',
