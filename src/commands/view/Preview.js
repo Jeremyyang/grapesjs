@@ -1,6 +1,6 @@
 import { each } from 'underscore';
 
-const cmdVis = 'sw-visibility';
+const cmdOutline = 'core:component-outline';
 
 export default {
   getPanels(editor) {
@@ -35,10 +35,10 @@ export default {
     editor.select();
 
     if (!this.shouldRunSwVisibility) {
-      this.shouldRunSwVisibility = editor.Commands.isActive(cmdVis);
+      this.shouldRunSwVisibility = editor.Commands.isActive(cmdOutline);
     }
 
-    this.shouldRunSwVisibility && editor.stopCommand(cmdVis);
+    this.shouldRunSwVisibility && editor.stopCommand(cmdOutline);
     editor.getModel().stopDefault();
 
     const panels = this.getPanels(editor);
@@ -57,8 +57,7 @@ export default {
     this.helper.style.display = 'inline-block';
 
     panels.forEach(panel => panel.set('visible', false));
-    // 因为布局定制调整，预览时某些元素需手动处理隐藏
-    document.querySelector('#left-bar').style.display = 'none';
+    this.toggleLeftBar(false);
 
     const canvasS = canvas.style;
     canvasS.width = '100%';
@@ -77,14 +76,14 @@ export default {
     const panels = this.getPanels(editor);
 
     if (this.shouldRunSwVisibility) {
-      editor.runCommand(cmdVis);
+      editor.runCommand(cmdOutline);
       this.shouldRunSwVisibility = false;
     }
 
     editor.getModel().runDefault();
     panels.forEach(panel => panel.set('visible', true));
-    // 因为布局定制调整，预览时某些元素需手动处理隐藏
-    document.querySelector('#left-bar').style.display = 'flex';
+
+    this.toggleLeftBar(true);
 
     const canvas = editor.Canvas.getElement();
     canvas.setAttribute('style', '');
@@ -97,5 +96,12 @@ export default {
 
     editor.refresh();
     this.tglEffects();
+  },
+  // 因为布局定制调整，预览时某些元素需手动处理隐藏
+  toggleLeftBar(isShow) {
+    const leftBarEl = document.querySelector('#left-bar');
+    if (leftBarEl) {
+      leftBarEl.style.display = isShow ? 'flex' : 'none';
+    }
   },
 };
