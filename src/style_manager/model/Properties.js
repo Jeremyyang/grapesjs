@@ -16,7 +16,7 @@ import PropertySliderView from './../view/PropertySliderView';
 import PropertyNumber from './PropertyNumber';
 import PropertyNumberView from './../view/PropertyNumberView';
 import PropertyView from './../view/PropertyView';
-
+// #内置
 export default Backbone.Collection.extend(TypeableCollection).extend({
   extendViewApi: 1,
 

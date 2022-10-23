@@ -21,7 +21,7 @@ export default class Selector extends Model {
       label: '',
       type: TYPE_CLASS,
       active: true,
-      private: true, // false
+      private: false,
       protected: false,
       _undo: true,
     };

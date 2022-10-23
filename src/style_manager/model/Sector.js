@@ -197,7 +197,7 @@ export default class Sector extends Model {
 
     if (!buildP.length) return [];
 
-    const builtIn = this.em?.get('StyleManager').builtIn;
+    const builtIn = this.em?.get('StyleManager').builtIn; // #内置
     return builtIn?.build(buildP);
   }
 }

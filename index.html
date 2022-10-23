@@ -161,7 +161,10 @@
       width: 150%;
       display: flex;
     }
-    .gjs-trt-trait--date .gjs-label-wrp{min-width: auto;}
+
+    .gjs-trt-trait--date .gjs-label-wrp {
+      min-width: auto;
+    }
   </style>
 </head>
 
@@ -423,11 +426,11 @@
         }, {
           name: 'Text Style',
           open: false,
-          buildProps: ['font-family', 'font-size', 'font-weight', 'letter-spacing', 'color', 'line-height', 'text-shadow'],
+          buildProps: ['font-size', 'font-weight', 'text-align', 'color', 'font-family', 'line-height', 'letter-spacing', 'text-shadow'],
         }, {
           name: 'Box Decorations',
           open: false,
-          buildProps: ['border-radius-c', 'border-radius', 'border', 'box-shadow', 'background-color', 'background'],
+          buildProps: ['border-radius-c', 'border-radius', 'border', 'box-shadow', 'background-color', 'background', 'opacity'],
         }, {
           name: 'Animation',
           open: false,
@@ -440,7 +443,7 @@
 
     editor.on('selector:add', selector => {
       selector.set({
-        private: false, // hide the selector
+        private: true, // hide the selector
       });
     });
     // 此插件有 bug
@@ -537,21 +540,21 @@
   </script>
   <script type="text/javascript">
 
-      const params = location.search.replace('?', '').split('&').filter(param => param.includes('page='));
-      if(params.length === 1) {
-        const page = params[0].replace('page=', '');
-        if(page){
-          fetch(`./demo-pages/${page}.json`).then(res => {
-            res.text().then(json => {
-              const project = JSON.parse(json);
-              editor.loadProjectData(project);
-            });
-          })
-        }
-        // todo tips
-      } else {
-        // todo tips
+    const params = location.search.replace('?', '').split('&').filter(param => param.includes('page='));
+    if (params.length === 1) {
+      const page = params[0].replace('page=', '');
+      if (page) {
+        fetch(`./demo-pages/${page}.json`).then(res => {
+          res.text().then(json => {
+            const project = JSON.parse(json);
+            editor.loadProjectData(project);
+          });
+        })
       }
+      // todo tips
+    } else {
+      // todo tips
+    }
   </script>
 </body>
 
