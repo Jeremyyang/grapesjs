@@ -384,7 +384,6 @@
         // 'grapesjs-project-manager',
       ],
       pluginsOpts: {
-        'gjs-editor-presets': { flexGrid: true },
         // 'grapesjs-style-gradient': {
         //   colorPicker: 'default',
         //   grapickOpts: {
@@ -440,12 +439,6 @@
       },
     });
 
-
-    editor.on('selector:add', selector => {
-      selector.set({
-        private: true, // hide the selector
-      });
-    });
     // 此插件有 bug
     // https://github.com/artf/grapick
     // editor.StyleManager.addProperty('box_decorations', {

@@ -2,73 +2,6 @@
   "assets": [],
   "styles": [
     {
-      "selectors": ["gjs-row"],
-      "style": {
-        "display": "table",
-        "padding-top": "10px",
-        "padding-right": "10px",
-        "padding-bottom": "10px",
-        "padding-left": "10px",
-        "width": "100%"
-      }
-    },
-    {
-      "selectors": ["gjs-cell"],
-      "style": {
-        "width": "100%",
-        "display": "block"
-      },
-      "mediaText": "(max-width: 768px)",
-      "atRuleType": "media"
-    },
-    {
-      "selectors": ["gjs-cell30"],
-      "style": {
-        "width": "100%",
-        "display": "block"
-      },
-      "mediaText": "(max-width: 768px)",
-      "atRuleType": "media"
-    },
-    {
-      "selectors": ["gjs-cell70"],
-      "style": {
-        "width": "100%",
-        "display": "block"
-      },
-      "mediaText": "(max-width: 768px)",
-      "atRuleType": "media"
-    },
-    {
-      "selectors": ["gjs-cell"],
-      "style": {
-        "width": "8%",
-        "display": "table-cell",
-        "height": "75px"
-      }
-    },
-    {
-      "selectors": ["#im9k"],
-      "style": {
-        "color": "#d983a6"
-      }
-    },
-    {
-      "selectors": ["tab"],
-      "style": {
-        "padding-top": "7px",
-        "padding-right": "14px",
-        "padding-bottom": "7px",
-        "padding-left": "14px",
-        "display": "inline-block",
-        "border-top-left-radius": "3px",
-        "border-top-right-radius": "3px",
-        "border-bottom-right-radius": "3px",
-        "border-bottom-left-radius": "3px",
-        "margin-right": "10px"
-      }
-    },
-    {
       "selectors": ["tab"],
       "style": {
         "outline-color": "initial",
@@ -132,6 +65,50 @@
       "atRuleType": "media"
     },
     {
+      "selectors": [
+        {
+          "name": "gjs-row",
+          "private": true
+        }
+      ],
+      "style": {
+        "display": "flex",
+        "justify-content": "flex-start",
+        "align-items": "stretch",
+        "flex-wrap": "nowrap",
+        "padding-top": "10px",
+        "padding-right": "10px",
+        "padding-bottom": "10px",
+        "padding-left": "10px"
+      }
+    },
+    {
+      "selectors": [
+        {
+          "name": "gjs-row",
+          "private": true
+        }
+      ],
+      "style": {
+        "flex-wrap": "wrap"
+      },
+      "mediaText": "(max-width: 768px)",
+      "atRuleType": "media"
+    },
+    {
+      "selectors": [
+        {
+          "name": "gjs-cell",
+          "private": true
+        }
+      ],
+      "style": {
+        "min-height": "75px",
+        "flex-grow": "1",
+        "flex-basis": "100%"
+      }
+    },
+    {
       "selectors": ["countdown"],
       "style": {
         "text-align": "center"
@@ -173,6 +150,58 @@
         "display": "inline-block"
       },
       "group": "cmp:countdown"
+    },
+    {
+      "selectors": ["#i7b0l"],
+      "style": {
+        "color": "#d983a6"
+      }
+    },
+    {
+      "selectors": ["#iq7bh"],
+      "style": {
+        "padding": "15px 10px"
+      }
+    },
+    {
+      "selectors": ["tab"],
+      "style": {
+        "padding-top": "7px",
+        "padding-right": "14px",
+        "padding-bottom": "7px",
+        "padding-left": "14px",
+        "display": "inline-block",
+        "border-top-left-radius": "3px",
+        "border-top-right-radius": "3px",
+        "border-bottom-right-radius": "3px",
+        "border-bottom-left-radius": "3px",
+        "margin-right": "10px"
+      }
+    },
+    {
+      "selectors": [],
+      "selectorsAdd": "0%",
+      "style": {
+        "opacity": "0"
+      },
+      "mediaText": "fadeEffect",
+      "atRuleType": "media"
+    },
+    {
+      "selectors": [],
+      "selectorsAdd": "100%",
+      "style": {
+        "opacity": "1"
+      },
+      "mediaText": "fadeEffect",
+      "atRuleType": "media"
+    },
+    {
+      "selectors": ["#i0y7"],
+      "style": {
+        "height": "100px",
+        "background-color": "#ff8080"
+      }
     }
   ],
   "pages": [
@@ -190,8 +219,18 @@
               "background-position",
               "background-size"
             ],
+            "attributes": {
+              "id": "ia9m"
+            },
             "_undoexc": ["status", "open"],
             "components": [
+              {
+                "tagName": "section",
+                "type": "Section",
+                "attributes": {
+                  "id": "iq7bh"
+                }
+              },
               {
                 "tagName": "section",
                 "type": "Section",
@@ -213,7 +252,95 @@
                   "br": 0,
                   "minDim": 1
                 },
-                "classes": ["gjs-row"],
+                "classes": [
+                  {
+                    "name": "gjs-row",
+                    "private": true
+                  }
+                ],
+                "attributes": {
+                  "id": "i1xx"
+                },
+                "_undoexc": ["status", "open"],
+                "components": [
+                  {
+                    "name": "Cell",
+                    "draggable": ".gjs-row",
+                    "stylable-require": "flex-basis",
+                    "unstylable": "width",
+                    "resizable": {
+                      "tl": 0,
+                      "tc": 0,
+                      "tr": 0,
+                      "cl": 0,
+                      "cr": 1,
+                      "bl": 0,
+                      "br": 0,
+                      "minDim": 1,
+                      "bc": 0,
+                      "currentUnit": 1,
+                      "step": 0.2,
+                      "keyWidth": "flex-basis"
+                    },
+                    "classes": [
+                      {
+                        "name": "gjs-cell",
+                        "private": true
+                      }
+                    ],
+                    "_undoexc": ["status", "open"]
+                  },
+                  {
+                    "name": "Cell",
+                    "draggable": ".gjs-row",
+                    "stylable-require": "flex-basis",
+                    "unstylable": "width",
+                    "resizable": {
+                      "tl": 0,
+                      "tc": 0,
+                      "tr": 0,
+                      "cl": 0,
+                      "cr": 1,
+                      "bl": 0,
+                      "br": 0,
+                      "minDim": 1,
+                      "bc": 0,
+                      "currentUnit": 1,
+                      "step": 0.2,
+                      "keyWidth": "flex-basis"
+                    },
+                    "classes": [
+                      {
+                        "name": "gjs-cell",
+                        "private": true
+                      }
+                    ],
+                    "_undoexc": ["status", "open"]
+                  }
+                ]
+              },
+              {
+                "name": "Row",
+                "droppable": ".gjs-cell",
+                "resizable": {
+                  "tl": 0,
+                  "tc": 0,
+                  "tr": 0,
+                  "cl": 0,
+                  "cr": 0,
+                  "bl": 0,
+                  "br": 0,
+                  "minDim": 1
+                },
+                "classes": [
+                  {
+                    "name": "gjs-row",
+                    "private": true
+                  }
+                ],
+                "attributes": {
+                  "id": "iob5"
+                },
                 "_undoexc": ["status", "open"],
                 "components": [
                   {
@@ -232,7 +359,12 @@
                       "currentUnit": 1,
                       "step": 0.2
                     },
-                    "classes": ["gjs-cell"],
+                    "classes": [
+                      {
+                        "name": "gjs-cell",
+                        "private": true
+                      }
+                    ],
                     "_undoexc": ["status", "open"]
                   },
                   {
@@ -251,17 +383,45 @@
                       "currentUnit": 1,
                       "step": 0.2
                     },
-                    "classes": ["gjs-cell"],
+                    "classes": [
+                      {
+                        "name": "gjs-cell",
+                        "private": true
+                      }
+                    ],
+                    "attributes": {
+                      "id": "i873"
+                    },
+                    "_undoexc": ["status", "open"]
+                  },
+                  {
+                    "name": "Cell",
+                    "draggable": ".gjs-row",
+                    "resizable": {
+                      "tl": 0,
+                      "tc": 0,
+                      "tr": 0,
+                      "cl": 0,
+                      "cr": 1,
+                      "bl": 0,
+                      "br": 0,
+                      "minDim": 1,
+                      "bc": 0,
+                      "currentUnit": 1,
+                      "step": 0.2
+                    },
+                    "classes": [
+                      {
+                        "name": "gjs-cell",
+                        "private": true
+                      }
+                    ],
+                    "attributes": {
+                      "id": "iqh7"
+                    },
                     "_undoexc": ["status", "open"]
                   }
                 ]
-              },
-              {
-                "tagName": "h1",
-                "type": "h(n)",
-                "attributes": {
-                  "id": "i9mk"
-                }
               },
               {
                 "type": "link",
@@ -272,9 +432,160 @@
                 "_undoexc": ["status", "open"]
               },
               {
+                "type": "link",
+                "content": "Link",
+                "attributes": {
+                  "id": "iiwn4"
+                },
+                "_undoexc": ["status", "open"]
+              },
+              {
+                "type": "link",
+                "content": "Link",
+                "attributes": {
+                  "id": "i7b0l"
+                },
+                "_undoexc": ["status", "open"]
+              },
+              {
+                "tagName": "section",
+                "type": "Section",
+                "attributes": {
+                  "id": "irwdk"
+                }
+              },
+              {
+                "type": "countdown",
+                "classes": ["countdown"],
+                "attributes": {
+                  "id": "ipb11"
+                },
+                "startfrom": "2022-10-25",
+                "components": [
+                  {
+                    "tagName": "span",
+                    "classes": ["countdown-cont"],
+                    "attributes": {
+                      "data-js": "countdown"
+                    },
+                    "_undoexc": ["status", "open"],
+                    "components": [
+                      {
+                        "classes": ["countdown-block"],
+                        "_undoexc": ["status", "open"],
+                        "components": [
+                          {
+                            "classes": ["countdown-digit"],
+                            "attributes": {
+                              "data-js": "countdown-day"
+                            },
+                            "_undoexc": ["status", "open"]
+                          },
+                          {
+                            "type": "text",
+                            "classes": ["countdown-label"],
+                            "_undoexc": ["status", "open"],
+                            "components": [
+                              {
+                                "type": "textnode",
+                                "content": "days",
+                                "_undoexc": ["status", "open"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "classes": ["countdown-block"],
+                        "_undoexc": ["status", "open"],
+                        "components": [
+                          {
+                            "classes": ["countdown-digit"],
+                            "attributes": {
+                              "data-js": "countdown-hour"
+                            },
+                            "_undoexc": ["status", "open"]
+                          },
+                          {
+                            "type": "text",
+                            "classes": ["countdown-label"],
+                            "_undoexc": ["status", "open"],
+                            "components": [
+                              {
+                                "type": "textnode",
+                                "content": "hours",
+                                "_undoexc": ["status", "open"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "classes": ["countdown-block"],
+                        "_undoexc": ["status", "open"],
+                        "components": [
+                          {
+                            "classes": ["countdown-digit"],
+                            "attributes": {
+                              "data-js": "countdown-minute"
+                            },
+                            "_undoexc": ["status", "open"]
+                          },
+                          {
+                            "type": "text",
+                            "classes": ["countdown-label"],
+                            "_undoexc": ["status", "open"],
+                            "components": [
+                              {
+                                "type": "textnode",
+                                "content": "minutes",
+                                "_undoexc": ["status", "open"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "classes": ["countdown-block"],
+                        "_undoexc": ["status", "open"],
+                        "components": [
+                          {
+                            "classes": ["countdown-digit"],
+                            "attributes": {
+                              "data-js": "countdown-second"
+                            },
+                            "_undoexc": ["status", "open"]
+                          },
+                          {
+                            "type": "text",
+                            "classes": ["countdown-label"],
+                            "_undoexc": ["status", "open"],
+                            "components": [
+                              {
+                                "type": "textnode",
+                                "content": "seconds",
+                                "_undoexc": ["status", "open"]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tagName": "span",
+                    "classes": ["countdown-endtext"],
+                    "attributes": {
+                      "data-js": "countdown-endtext"
+                    },
+                    "_undoexc": ["status", "open"]
+                  }
+                ]
+              },
+              {
                 "type": "tabs",
                 "attributes": {
-                  "id": "iz3g"
+                  "id": "ib13s"
                 },
                 "components": [
                   {
@@ -289,8 +600,8 @@
                         "classes": ["tab"],
                         "attributes": {
                           "role": "tab",
-                          "aria-controls": "ia7l6",
-                          "id": "ineh"
+                          "aria-controls": "i1qmf",
+                          "id": "i4ibj"
                         },
                         "components": [
                           {
@@ -313,8 +624,8 @@
                         "classes": ["tab"],
                         "attributes": {
                           "role": "tab",
-                          "aria-controls": "ikavh",
-                          "id": "izryo"
+                          "aria-controls": "idn23",
+                          "id": "ivnaf"
                         },
                         "components": [
                           {
@@ -337,8 +648,8 @@
                         "classes": ["tab"],
                         "attributes": {
                           "role": "tab",
-                          "aria-controls": "ioxr8",
-                          "id": "iqg0l"
+                          "aria-controls": "ib7gc",
+                          "id": "ial3g"
                         },
                         "components": [
                           {
@@ -367,8 +678,8 @@
                         "classes": ["tab-content"],
                         "attributes": {
                           "role": "tabpanel",
-                          "id": "ia7l6",
-                          "aria-labelledby": "ineh",
+                          "id": "i1qmf",
+                          "aria-labelledby": "i4ibj",
                           "hidden": true
                         },
                         "components": [
@@ -390,8 +701,8 @@
                         "classes": ["tab-content"],
                         "attributes": {
                           "role": "tabpanel",
-                          "id": "ikavh",
-                          "aria-labelledby": "izryo",
+                          "id": "idn23",
+                          "aria-labelledby": "ivnaf",
                           "hidden": true
                         },
                         "components": [
@@ -413,8 +724,8 @@
                         "classes": ["tab-content"],
                         "attributes": {
                           "role": "tabpanel",
-                          "id": "ioxr8",
-                          "aria-labelledby": "iqg0l",
+                          "id": "ib7gc",
+                          "aria-labelledby": "ial3g",
                           "hidden": true
                         },
                         "components": [
@@ -430,133 +741,6 @@
                             ]
                           }
                         ]
-                      }
-                    ]
-                  },
-                  {
-                    "type": "countdown",
-                    "classes": ["countdown"],
-                    "attributes": {
-                      "id": "i5oig"
-                    },
-                    "components": [
-                      {
-                        "tagName": "span",
-                        "classes": ["countdown-cont"],
-                        "attributes": {
-                          "data-js": "countdown"
-                        },
-                        "_undoexc": ["status", "open"],
-                        "components": [
-                          {
-                            "classes": ["countdown-block"],
-                            "_undoexc": ["status", "open"],
-                            "components": [
-                              {
-                                "classes": ["countdown-digit"],
-                                "attributes": {
-                                  "data-js": "countdown-day"
-                                },
-                                "_undoexc": ["status", "open"]
-                              },
-                              {
-                                "type": "text",
-                                "classes": ["countdown-label"],
-                                "_undoexc": ["status", "open"],
-                                "components": [
-                                  {
-                                    "type": "textnode",
-                                    "content": "days",
-                                    "_undoexc": ["status", "open"]
-                                  }
-                                ]
-                              }
-                            ]
-                          },
-                          {
-                            "classes": ["countdown-block"],
-                            "_undoexc": ["status", "open"],
-                            "components": [
-                              {
-                                "classes": ["countdown-digit"],
-                                "attributes": {
-                                  "data-js": "countdown-hour"
-                                },
-                                "_undoexc": ["status", "open"]
-                              },
-                              {
-                                "type": "text",
-                                "classes": ["countdown-label"],
-                                "_undoexc": ["status", "open"],
-                                "components": [
-                                  {
-                                    "type": "textnode",
-                                    "content": "hours",
-                                    "_undoexc": ["status", "open"]
-                                  }
-                                ]
-                              }
-                            ]
-                          },
-                          {
-                            "classes": ["countdown-block"],
-                            "_undoexc": ["status", "open"],
-                            "components": [
-                              {
-                                "classes": ["countdown-digit"],
-                                "attributes": {
-                                  "data-js": "countdown-minute"
-                                },
-                                "_undoexc": ["status", "open"]
-                              },
-                              {
-                                "type": "text",
-                                "classes": ["countdown-label"],
-                                "_undoexc": ["status", "open"],
-                                "components": [
-                                  {
-                                    "type": "textnode",
-                                    "content": "minutes",
-                                    "_undoexc": ["status", "open"]
-                                  }
-                                ]
-                              }
-                            ]
-                          },
-                          {
-                            "classes": ["countdown-block"],
-                            "_undoexc": ["status", "open"],
-                            "components": [
-                              {
-                                "classes": ["countdown-digit"],
-                                "attributes": {
-                                  "data-js": "countdown-second"
-                                },
-                                "_undoexc": ["status", "open"]
-                              },
-                              {
-                                "type": "text",
-                                "classes": ["countdown-label"],
-                                "_undoexc": ["status", "open"],
-                                "components": [
-                                  {
-                                    "type": "textnode",
-                                    "content": "seconds",
-                                    "_undoexc": ["status", "open"]
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "tagName": "span",
-                        "classes": ["countdown-endtext"],
-                        "attributes": {
-                          "data-js": "countdown-endtext"
-                        },
-                        "_undoexc": ["status", "open"]
                       }
                     ]
                   }
